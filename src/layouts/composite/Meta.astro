@@ -1,0 +1,31 @@
+---
+import { Resume } from "@schema/index";
+---
+
+<!-- Global Metadata -->
+<meta charset="UTF-8" />
+<meta name="robots" content="index, follow" />
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+
+
+<!-- Font preloads -->
+<link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
+<link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
+
+
+
+<!-- Primary Meta Tags -->
+<title>{Resume.basics.name}</title>
+<meta name="title" content={Resume.basics.name} />
+<meta name="description" content={Resume.basics.summary} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="profile" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={Resume.basics.name} />
+<meta property="og:image" content={Resume.basics.image} />
+<meta property="og:description" content={Resume.basics.summary} />
+<meta property="profile:first_name" content={Resume.basics.firstName} />
+<meta property="profile:last_name" content={Resume.basics.lastName} />
