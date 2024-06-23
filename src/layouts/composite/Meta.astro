@@ -1,5 +1,5 @@
 ---
-import { Resume } from "@schema/index";
+import { Profile } from "@schema";
 ---
 
 <!-- Global Metadata -->
@@ -17,15 +17,15 @@ import { Resume } from "@schema/index";
 
 
 <!-- Primary Meta Tags -->
-<title>{Resume.basics.name}</title>
-<meta name="title" content={Resume.basics.name} />
-<meta name="description" content={Resume.basics.summary} />
+<title>{Profile.name}</title>
+<meta name="title" content={Profile.name} />
+<meta name="description" content={Profile.summary} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="profile" />
 <meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={Resume.basics.name} />
-<meta property="og:image" content={Resume.basics.image} />
-<meta property="og:description" content={Resume.basics.summary} />
-<meta property="profile:first_name" content={Resume.basics.firstName} />
-<meta property="profile:last_name" content={Resume.basics.lastName} />
+<meta property="og:title" content={Profile.name} />
+<meta property="og:image" content={Profile.image} />
+<meta property="og:description" content={Profile.summary} />
+<meta property="profile:first_name" content={Profile.firstName} />
+<meta property="profile:last_name" content={Profile.lastName} />

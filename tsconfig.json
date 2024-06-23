@@ -5,8 +5,8 @@
     /* Alias */
     "baseUrl": "./",
     "paths": {
-      "@assets": [
-        "./src/assets"
+      "@assets/*": [
+        "./src/assets/*"
       ],
       "@component/*": [
         "./src/components/*"
@@ -17,11 +17,15 @@
       "@layout/*": [
         "./src/layouts/*"
       ],
-      "@schema/*": [
-        "./src/schema/*"
+      "@schema": [
+        "./src/schema"
       ],
       "@core/*": [
         "./src/core/*"
+      ],
+
+      "@pdf": [
+        "./src/pdfs"
       ],
     }
   }
