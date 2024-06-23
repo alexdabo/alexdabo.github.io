@@ -1,4 +1,4 @@
-import type { IconName } from "@core/index"
+import type { IconName } from "@core/icon"
 
 export interface Basics {
   firstName: string
