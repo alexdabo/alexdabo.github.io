@@ -1,6 +1,6 @@
 export interface Award {
-    title: string
-    date: string
-    awarder: string
-    summary: string
-  }
+  title: string;
+  date: string;
+  awarder: string;
+  summary: string;
+}

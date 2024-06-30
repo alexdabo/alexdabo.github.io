@@ -5,28 +5,14 @@
     /* Alias */
     "baseUrl": "./",
     "paths": {
-      "@assets/*": [
-        "./src/assets/*"
-      ],
-      "@component/*": [
-        "./src/components/*"
-      ],
-      "@config/*": [
-        "./src/configs/*"
-      ],
-      "@layout/*": [
-        "./src/layouts/*"
-      ],
-      "@schema": [
-        "./src/schema"
-      ],
-      "@core/*": [
-        "./src/core/*"
-      ],
+      "@assets/*": ["./src/assets/*"],
+      "@component/*": ["./src/components/*"],
+      "@config/*": ["./src/configs/*"],
+      "@layout/*": ["./src/layouts/*"],
+      "@schema": ["./src/schema"],
+      "@core/*": ["./src/core/*"],
 
-      "@pdf": [
-        "./src/pdfs"
-      ],
+      "@pdf": ["./src/pdfs"]
     }
   }
 }

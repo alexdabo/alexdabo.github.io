@@ -1,60 +1,54 @@
-import type { IconName } from "@core/icon"
-
+import type { IconName } from "@core/icon";
 
 interface Network {
-  name: string
-  label: string
-  url: string
-  icon: IconName
+  name: string;
+  label: string;
+  url: string;
+  icon: IconName;
 }
 interface Networks {
-  cv: Network
-  email: Network
-  github: Network
-  mobile: Network
-  whatsapp:Network
-  website:Network
+  cv: Network;
+  email: Network;
+  github: Network;
+  mobile: Network;
+  whatsapp: Network;
+  website: Network;
 }
 interface Location {
-  address: string
-  postalCode: string
-  city: string
-  countryCode: string
-  region: string
+  address: string;
+  postalCode: string;
+  city: string;
+  countryCode: string;
+  region: string;
 }
 
 interface ProfileResume {
-  firstName: string
-  lastName: string
-  greeting: string
-  name: string
-  label: string
-  image: string
-  email: string
-  phone: string
-  url: string
-  summary: string
-  location: Location
-  network: Networks
+  firstName: string;
+  lastName: string;
+  greeting: string;
+  name: string;
+  label: string;
+  image: string;
+  email: string;
+  phone: string;
+  url: string;
+  summary: string;
+  location: Location;
+  network: Networks;
 }
-
-
-
-
-
-
 
 export const Profile: ProfileResume = {
   firstName: "Alexander David",
   lastName: "Bonilla Adriano",
   name: "Alexander Bonilla",
-  label: 'Ing. en sistemas & computación',
-  greeting: 'Hola, soy alexander',
+  label: "Ing. en sistemas & computación",
+  greeting: "Hola, soy alexander",
   image: "https://avatars.githubusercontent.com/u/29008617",
   email: "adbonilla.ad@gmail.com",
   phone: "593979728686",
   url: "https://alexdabo.github.io",
-  summary: "Desarrollador web fullstack que disfruta enfrentando desafíos, diseñando soluciones eficientes y escalables.",
+  summary:
+    "Desarrollador web fullstack que disfruta enfrentando desafíos, diseñando soluciones eficientes y escalables.",
   location: {
     address: "",
     postalCode: "",
@@ -63,11 +57,36 @@ export const Profile: ProfileResume = {
     region: "",
   },
   network: {
-    cv: { name: "Descargar", icon: 'cv', url: "#", label: "Descargar CV" },
-    email: { name: "Correo", icon: 'email', url: "mailto:adbonilla.ad@gmail.com", label: "adbonilla.ad@gmail.com" },
-    github: { name: "GitHub", icon: 'github', url: "https://github.com/alexdabo", label: "github.com/alexdabo" },
-    mobile: { name: "Teléfono", icon: 'phone', url: "tel:+59397972866", label: "+59397972866" },
-    whatsapp: { name: "WhatsApp", icon: 'whatsapp', url: "https://wa.me/59397972866", label: "+59397972866" },
-    website: { name: "Sitio web", icon: 'web', url: "https://alexdabo.github.io", label: "alexdabo.github.io" },
-  }
-}
+    cv: { name: "Descargar", icon: "cv", url: "#", label: "Descargar CV" },
+    email: {
+      name: "Correo",
+      icon: "email",
+      url: "mailto:adbonilla.ad@gmail.com",
+      label: "adbonilla.ad@gmail.com",
+    },
+    github: {
+      name: "GitHub",
+      icon: "github",
+      url: "https://github.com/alexdabo",
+      label: "github.com/alexdabo",
+    },
+    mobile: {
+      name: "Teléfono",
+      icon: "phone",
+      url: "tel:+59397972866",
+      label: "+59397972866",
+    },
+    whatsapp: {
+      name: "WhatsApp",
+      icon: "whatsapp",
+      url: "https://wa.me/59397972866",
+      label: "+59397972866",
+    },
+    website: {
+      name: "Sitio web",
+      icon: "web",
+      url: "https://alexdabo.github.io",
+      label: "alexdabo.github.io",
+    },
+  },
+};

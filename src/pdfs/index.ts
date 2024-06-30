@@ -1,1 +1,1 @@
-export * from './portfolio.render'
+export * from "./portfolio.render";

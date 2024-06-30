@@ -5,12 +5,10 @@ import type { TDocumentInformation } from "pdfmake/interfaces";
  * metadata info
  */
 export const PortfolioMetadata: TDocumentInformation = {
-
-
-    author: Profile.name,
-    creator: Profile.name,
-    producer: Profile.name,
-    title: Profile.greeting,
-    subject: Profile.summary,
-    keywords: `CV ${Profile.lastName} ${Profile.firstName}, ${Profile.email}, ${Profile.phone}`
-}
+  author: Profile.name,
+  creator: Profile.name,
+  producer: Profile.name,
+  title: Profile.greeting,
+  subject: Profile.summary,
+  keywords: `CV ${Profile.lastName} ${Profile.firstName}, ${Profile.email}, ${Profile.phone}`,
+};
