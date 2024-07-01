@@ -48,7 +48,7 @@ export const Profile: ProfileResume = {
   phone: "593979728686",
   url: "https://alexdabo.github.io",
   summary:
-    "Desarrollador web fullstack que disfruta enfrentando desafíos, diseñando soluciones eficientes y escalables.",
+    "Desarrollador web fullstack que disfruta enfrentando desafíos, diseñando soluciones eficientes.",
   location: {
     address: "",
     postalCode: "",
@@ -73,14 +73,14 @@ export const Profile: ProfileResume = {
     mobile: {
       name: "Teléfono",
       icon: "phone",
-      url: "tel:+59397972866",
-      label: "+59397972866",
+      url: "tel:+593979728686",
+      label: "+593979728686",
     },
     whatsapp: {
       name: "WhatsApp",
       icon: "whatsapp",
-      url: "https://wa.me/59397972866",
-      label: "+59397972866",
+      url: "https://wa.me/593979728686",
+      label: "+593979728686",
     },
     website: {
       name: "Sitio web",
