@@ -33,6 +33,7 @@ interface ProfileResume {
   phone: string;
   url: string;
   summary: string;
+  description: string;
   location: Location;
   network: Networks;
 }
@@ -49,6 +50,8 @@ export const Profile: ProfileResume = {
   url: "https://alexdabo.github.io",
   summary:
     "Desarrollador web fullstack que disfruta enfrentando desafíos, diseñando soluciones eficientes y escalables.",
+  description:
+    "Profesional con más de 3 años de trayectoria como Ingeniero en Sistemas y Computación, destacando en la creación de servicios y aplicaciones web personalizadas.",
   location: {
     address: "",
     postalCode: "",

@@ -235,7 +235,7 @@ export const PortfolioDefinition: TDocumentDefinitions = Layout(
       table: {
         body: [
           [{ text: ABOUT.label.toUpperCase(), style: "section" }],
-          [{ text: Profile.summary, alignment: "justify" }],
+          [{ text: Profile.description, alignment: "justify" }],
 
           [{ text: EXPERIENCE.label.toUpperCase(), style: "section" }],
           [{ layout: HLineLayout(), table: EXPERIENCE_TABLE }],
