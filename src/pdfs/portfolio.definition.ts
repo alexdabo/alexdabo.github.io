@@ -47,7 +47,7 @@ const SKILL_TABLE: Table = {
           {
             columnGap: 2,
             margin: [0, 5],
-            columns: skill.keywords.map((label) => Chip({ label })),
+            columns: skill.keywords.map((tag) => Chip({ label: tag.name })),
           },
         ],
       },
@@ -108,7 +108,7 @@ const EXPERIENCE_TABLE: Table = {
               {
                 columnGap: 5,
                 columns: item.highlights.map((element) =>
-                  Chip({ label: element }),
+                  Chip({ label: element.name }),
                 ),
               },
             ],
@@ -141,7 +141,7 @@ const PROJECT_TABLE: Table = {
               {
                 columnGap: 5,
                 columns: item.highlights.map((element) =>
-                  Chip({ label: element }),
+                  Chip({ label: element.name }),
                 ),
               },
             ],
@@ -234,10 +234,10 @@ export const PortfolioDefinition: TDocumentDefinitions = Layout(
       layout: SectionLayout(),
       table: {
         body: [
-          [{ text: ABOUT.label.toUpperCase(), style: "section" }],
+          [{ text: ABOUT.label?.toUpperCase(), style: "section" }],
           [{ text: Profile.description, alignment: "justify" }],
 
-          [{ text: EXPERIENCE.label.toUpperCase(), style: "section" }],
+          [{ text: EXPERIENCE.label?.toUpperCase(), style: "section" }],
           [{ layout: HLineLayout(), table: EXPERIENCE_TABLE }],
 
           [{ text: "PROYECTOS", style: "section" }],

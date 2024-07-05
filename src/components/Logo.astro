@@ -1,0 +1,19 @@
+---
+import { Logos, type LogoName } from "@core/logo";
+interface Props {
+  logo: LogoName;
+  size?: string;
+}
+
+const { logo, size = 64 } = Astro.props;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  class="graphic"
+  width={size}
+  height={size}
+  viewBox="0 0 64 64"
+>
+  <g set:html={Logos[logo]} />
+</svg>

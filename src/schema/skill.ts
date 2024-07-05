@@ -1,26 +1,38 @@
-interface Skill {
+import { Logo, type LogoTag } from "@core/logo";
+
+interface TechnicalSkill {
   name: string;
-  keywords: string[];
+  keywords: Array<LogoTag>;
 }
 
-export const TechnicalSkills: Array<Skill> = [
+interface Skill {
+  name: string;
+  keywords: Array<string>;
+}
+
+export const TechnicalSkills: Array<TechnicalSkill> = [
+  {
+    name: "Leguajes",
+    keywords: [Logo.go, Logo.java, Logo.node, Logo.typescript],
+  },
   {
     name: "Servicio web",
-    keywords: ["Go", "NodeJS", "GraphQL"],
+    keywords: [Logo.express, Logo.nest, Logo.graphql],
   },
   {
     name: "Desarrollo web",
-    keywords: ["React", "Vue", "Astro"],
+    keywords: [Logo.astro, Logo.react, Logo.vue],
   },
   {
     name: "Bases de datos",
-    keywords: ["MySQL", "PostgreSQL"],
+    keywords: [Logo.mongodb, Logo.mysql, Logo.postgres],
   },
 ];
 
 export const PersonalSkills: Skill = {
   name: "Persolanes",
   keywords: [
+    "Resolutivo",
     "Habilidad empática.",
     "Trabajo colaborativo.",
     "Me apasiona compartir lo que he aprendido.",

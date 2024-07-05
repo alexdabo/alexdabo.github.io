@@ -32,6 +32,7 @@ interface ProfileResume {
   email: string;
   phone: string;
   url: string;
+  about: string;
   summary: string;
   description: string;
   location: Location;
@@ -44,12 +45,16 @@ export const Profile: ProfileResume = {
   name: "Alexander Bonilla",
   label: "Ing. en sistemas & computación",
   greeting: "Hola, soy alexander",
-  image: "https://avatars.githubusercontent.com/u/29008617",
+  // image: "https://avatars.githubusercontent.com/u/29008617",
+  image:
+    "https://ojdt.com.ve/archivos/styles/height/public/team/joaquin-dongoroz_4.jpg",
   email: "adbonilla.ad@gmail.com",
   phone: "593979728686",
   url: "https://alexdabo.github.io",
   summary:
     "Desarrollador web fullstack que disfruta enfrentando desafíos, diseñando soluciones eficientes y escalables.",
+  about:
+    "Mi nombre es Alexander David y me considero un entusiasta del código y de GNU/Linux. Desde que descubrí el fascinante mundo de Linux a los 13 años, he estado profundamente involucrado en el mundo de la informática.",
   description:
     "Profesional con más de 3 años de trayectoria como Ingeniero en Sistemas y Computación, destacando en la creación de servicios y aplicaciones web personalizadas.",
 

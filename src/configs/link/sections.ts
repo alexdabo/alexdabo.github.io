@@ -1,26 +1,32 @@
-interface SectionLink {
+export interface SectionLink {
   id: string;
-  label: string;
+  name: string;
+  label?: string;
 }
 
 export const HOME: SectionLink = {
-  label: "Inicio",
   id: "home",
+  name: "Inicio",
 };
 
 export const EXPERIENCE: SectionLink = {
-  label: "Experiencia",
   id: "experience",
+  name: "Experiencia",
+};
+export const PROJECT: SectionLink = {
+  id: "project",
+  name: "Proyectos",
 };
 
 export const SKILL: SectionLink = {
-  label: "Habilidad",
   id: "skill",
+  name: "Habilidad",
 };
 
 export const ABOUT: SectionLink = {
-  label: "Acerca",
   id: "about",
+  name: "Acerca",
+  label: "Acerca de mi",
 };
 
 export const SECTIONS: Array<SectionLink> = [HOME, EXPERIENCE, SKILL, ABOUT];

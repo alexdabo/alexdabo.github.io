@@ -1,0 +1,26 @@
+---
+import type { IconName } from "@core/icon";
+import Icon from "./Icon.astro";
+import Tooltip from "./Tooltip.astro";
+
+interface Props {
+  id: string;
+  tooltip?: string;
+  icon?: IconName;
+  link?: string;
+  target?: "_self" | "_blank" | "_parent" | "_top";
+}
+const { id, tooltip, icon, link, target } = Astro.props;
+---
+
+<Tooltip title={tooltip}>
+  <a
+    id={id}
+    href={link}
+    target={target}
+    class="flex flex-row items-center gap-2 text-xs text-gray-800 dark:text-white rounded-lg text-sm px-4 py-2 border border-gray-500 dark:border-gray-700 hover:shadow hover:shadow-gray-500"
+  >
+    {icon && <Icon icon={icon} size="20" strokeWidth={1} />}
+    <slot />
+  </a>
+</Tooltip>

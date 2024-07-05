@@ -1,0 +1,36 @@
+---
+import Section from "@component/Section.astro";
+import { Interests, Profile } from "@schema";
+import { ABOUT } from "@config/link";
+---
+
+<Section id={ABOUT.id} label={ABOUT.label}>
+  <article
+    class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row"
+  >
+    <div
+      class="[&>p]:mb-4 [&>p>strong]:text-primary-500 dark:[&>p>strong]:text-primary-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
+    >
+      <p>
+        {Profile.about}
+      </p>
+
+      {
+        Interests.map(item => (
+          <p class="">
+            <strong>{item.name}</strong> {item.reason}
+          </p>
+        ))
+      }
+    </div>
+
+    <img
+      width="200"
+      height="200"
+      src={Profile.image}
+      alt={Profile.name}
+      class="order-1 md:order-2 object-cover w-64 h-full p-1 rotate-3 aspect-square rounded-2xl bg-primary-300 dark:bg-primary-200"
+      style="object-position: 50% 50%"
+    />
+  </article>
+</Section>

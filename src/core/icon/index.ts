@@ -1,14 +1,14 @@
 import { Chess, Judo, type ActivityIconName } from "./activity.icon";
-import {
-  Email,
-  GitHub,
-  Phone,
-  Website,
-  WhatsApp,
-  type AppIconName,
-} from "./app.icon";
 import { Calendar, CvFile, type FileIconName } from "./input.icon";
 import { Moon, Sun, type ThemeIconName } from "./theme.icon";
+import {
+  type AppIconName,
+  WhatsApp,
+  Website,
+  GitHub,
+  Email,
+  Phone,
+} from "./app.icon";
 
 export type IconName =
   | ActivityIconName
