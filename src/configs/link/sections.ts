@@ -29,4 +29,10 @@ export const ABOUT: SectionLink = {
   label: "Acerca de mi",
 };
 
-export const SECTIONS: Array<SectionLink> = [HOME, EXPERIENCE, SKILL, ABOUT];
+export const SECTIONS: Array<SectionLink> = [
+  HOME,
+  EXPERIENCE,
+  PROJECT,
+  SKILL,
+  ABOUT,
+];
