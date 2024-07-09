@@ -1,7 +1,15 @@
-import { Express, GraphQL, LoopBack, Nest, Sri, type ApiLogoName } from "./api";
 import { Mongodb, MySQL, Postgres, type DbLogoName } from "./db";
 import { Go, Java, Node, TypeScript, type LangLogoName } from "./lang";
 import { Astro, React, Vue, type WebLogoName } from "./web";
+import {
+  type ApiLogoName,
+  LoopBack,
+  Express,
+  GraphQL,
+  Nest,
+  Rest,
+  Sri,
+} from "./api";
 
 export type LogoName = ApiLogoName | DbLogoName | LangLogoName | WebLogoName;
 
@@ -38,7 +46,7 @@ export const Logo: TagElement = {
     website:
       "https://celcer.sri.gob.ec/comprobantes-electronicos-ws/RecepcionComprobantesOffline?wsdl",
   },
-  rest: { logo: "express", name: "REST", website: "https://expressjs.com" },
+  rest: { logo: "rest", name: "REST", website: "https://expressjs.com" },
 
   // DB
   mongodb: { logo: "mongodb", name: "MongoDB", website: "https://mongodb.com" },
@@ -72,7 +80,7 @@ export const Logos: LogoElement = {
   graphql: GraphQL,
   nest: Nest,
   sri: Sri,
-  rest: Express,
+  rest: Rest,
 
   // DB
   mongodb: Mongodb,
