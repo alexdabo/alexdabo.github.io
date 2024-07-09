@@ -1,5 +1,13 @@
 ---
 import { Profile } from "@schema";
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const props = Astro.props;
+const title = props.title ?? Profile.name;
+const description = props.description ?? Profile.description;
 ---
 
 <!-- Global Metadata -->
@@ -26,15 +34,15 @@ import { Profile } from "@schema";
 />
 
 <!-- Primary Meta Tags -->
-<title>{Profile.name}</title>
-<meta name="title" content={Profile.name} />
-<meta name="description" content={Profile.summary} />
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="profile" />
 <meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={Profile.name} />
+<meta property="og:title" content={title} />
 <meta property="og:image" content={Profile.image} />
-<meta property="og:description" content={Profile.summary} />
+<meta property="og:description" content={description} />
 <meta property="profile:first_name" content={Profile.firstName} />
 <meta property="profile:last_name" content={Profile.lastName} />

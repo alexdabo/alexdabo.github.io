@@ -8,23 +8,24 @@ import Hero from "@component/page/Hero.astro";
 ---
 
 <Layout>
-  <main class="flex flex-col items-center">
-    <Hero />
-    <Work />
-    <Project />
-    <Skill />
-    <About />
-  </main>
+  <Hero />
+  <Work />
+  <Project />
+  <Skill />
+  <About />
 </Layout>
 
 <script>
-  import { render } from "@pdf";
   import { Profile } from "@schema";
 
-  const cvBtn = document.getElementById("profile-cv")!;
+  document.addEventListener("keydown", function (event) {
+    // Check if Ctrl (or Cmd on Mac) + p is pressed
+    if ((event.ctrlKey || event.metaKey) && event.key === "p") {
+      // Prevent default Ctrl + p behavior (like print dialog)
+      event.preventDefault();
 
-  // Toggle the theme when a user clicks the button.
-  cvBtn.addEventListener("click", () => {
-    render().download(`${Profile.name} CV.pdf`);
+      // Redirect to /pdf
+      window.location.href = Profile.network.cv.url;
+    }
   });
 </script>

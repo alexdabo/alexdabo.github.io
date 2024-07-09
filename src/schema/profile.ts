@@ -66,7 +66,7 @@ export const Profile: ProfileResume = {
     region: "",
   },
   network: {
-    cv: { name: "Descargar", icon: "cv", url: "#", label: "Descargar CV" },
+    cv: { name: "Descargar", icon: "cv", url: "/pdf", label: "Descargar CV" },
     email: {
       name: "Correo",
       icon: "email",
