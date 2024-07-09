@@ -1,5 +1,7 @@
 import { Logo, type LogoTag } from "@core/logo";
-import Galeno from "@assets/image/sisho-ch.png";
+import GalenoClient from "@assets/image/galeno-client.png";
+import GalenoApi from "@assets/image/galeno-api.png";
+import type { ImageSource } from "@core/model";
 
 interface Work {
   name: string;
@@ -8,7 +10,7 @@ interface Work {
   startDate: string;
   endDate: string;
   summary: string;
-  image: string;
+  images: Array<ImageSource>;
   highlights: Array<LogoTag>;
 }
 
@@ -16,7 +18,7 @@ export const Works: Array<Work> = [
   {
     name: "Pegaso Solutions",
     position: "Desarrollador",
-    image: Galeno.src,
+    images: [{ src: GalenoClient.src }, { src: GalenoApi.src }],
     url: "https://pegasosolutionsec.com",
     summary:
       "Desarrollar sistemas para la gestión integral en hospitales, abarcando áreas como farmacia, consultorios médicos/odontológicos, imagenología y entrega de informes médicos.",

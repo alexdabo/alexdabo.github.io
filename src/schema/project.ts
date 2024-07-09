@@ -1,6 +1,7 @@
 import SishoMain from "@assets/image/sisho-main.png";
 import SishoCH from "@assets/image/sisho-ch.png";
 import { Logo, type LogoTag } from "@core/logo";
+import type { ImageSource } from "@core/model";
 
 export interface Project {
   name: string;
@@ -11,29 +12,35 @@ export interface Project {
   highlights: Array<LogoTag>;
   url?: string;
   github?: string;
-  image: string;
+  images: Array<ImageSource>;
 }
 
 export const Projects: Array<Project> = [
   {
     name: "Bamboo",
     place: "Senagua",
-    description:
-      " Desarrollo del sistema informático para las juntas de administración de agua potable y capacitación del sistema informático.",
-    startDate: "02/2018",
     endDate: "04/2019",
-    image: SishoMain.src,
+    startDate: "02/2018",
+    description:
+      "Desarrollo del sistema informático para las juntas de administración de agua potable y capacitación del sistema informático.",
     github: "https://github.com/bamboo",
+    images: [
+      { src: SishoMain.src, alt: "Sisho main" },
+      { src: SishoCH.src, alt: "Sisho checkeo" },
+    ],
     highlights: [Logo.java, Logo.rest, Logo.vue],
   },
   {
     name: "Sisho",
+    endDate: "10/2020",
+    startDate: "06/2020",
     place: "Hospital Universitario Andino",
     description:
       "Desarrollo del sistema de historias clínicas para el Hospital Universitario Andino.",
-    startDate: "06/2020",
-    endDate: "10/2020",
-    image: SishoCH.src,
+    images: [
+      { src: SishoCH.src, alt: "Sisho checkeo" },
+      { src: SishoMain.src, alt: "Sisho main" },
+    ],
     highlights: [Logo.node, Logo.loopback, Logo.rest],
   },
 ];
