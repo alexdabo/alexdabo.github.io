@@ -1,0 +1,130 @@
+---
+import type { ImageSource } from "@core/model";
+
+interface Props {
+  id?: string;
+  /**
+   * Use dots to navidate [default:false]
+   */
+  dots?: boolean;
+  /**
+   * Duration on ms [default:6000]
+   */
+  duration?: number;
+  images: Array<ImageSource>;
+}
+const {
+  images,
+  dots = false,
+  duration = 6000,
+  id = Math.random().toString(36).substring(2, 9)
+} = Astro.props;
+---
+
+<image-carousel data-id={id} data-duration={duration} class="carousel">
+  <div id={`carousel-inner-${id}`} class="carousel-inner">
+    {
+      images.map(item => (
+        <div id={`carousel-wrapper-${id}`} class="carousel-wrapper">
+          <img
+            src={item.src}
+            alt={item.alt}
+            loading="lazy"
+            class="object-cover object-center w-full h-full transition duration-500 md:hover:scale-105"
+          />
+        </div>
+      ))
+    }
+  </div>
+  {
+    images.length > 1 && dots && (
+      <div class="flex flex-row justify-center items-center gap-2 pb-2">
+        {images.map((_, index) => (
+          <button
+            data-index={index}
+            id={`carousel-dot-${id}`}
+            class:list={[
+              index === 0 ? "ring" : "hover:scale-150",
+              "rounded-full w-2 h-2 shadow opacity-70 ring-offset-1 ring-primary-700 bg-primary-500 hover:bg-primary-600"
+            ]}
+          />
+        ))}
+      </div>
+    )
+  }
+</image-carousel>
+
+<script>
+  class Carousel extends HTMLElement {
+    private index: number = 0;
+    private total: number = 0;
+    private wrappers: NodeListOf<HTMLElement>;
+    private dots: NodeListOf<HTMLElement>;
+
+    constructor() {
+      super();
+
+      this.wrappers = document.querySelectorAll(`#carousel-wrapper-${this.dataset.id}`);
+      this.total = this.wrappers.length;
+
+      this.dots = document.querySelectorAll(`#carousel-dot-${this.dataset.id}`);
+      this.dots.forEach((dot, index) => {
+        dot.addEventListener("click", event => {
+          const target = event.currentTarget as HTMLElement;
+          this.index = Number(target.dataset.index);
+          this.move();
+        });
+      });
+    }
+
+    connectedCallback() {
+      setInterval(() => this.next(), Number(this.dataset.duration));
+    }
+
+    private move() {
+      if (this.wrappers) {
+        const carouselWidth = this.wrappers[0].offsetWidth;
+        const newPosition = -this.index * carouselWidth;
+
+        const id = `#carousel-inner-${this.dataset.id}`;
+        const carousel = document.querySelector(id) as HTMLElement;
+        if (carousel) {
+          carousel.style.transform = `translateX(${newPosition}px)`;
+          this.dots.forEach(dot => {
+            if (dot.dataset.index === String(this.index)) {
+              dot.classList.add("ring");
+              dot.classList.remove("hover:scale-150");
+            } else {
+              dot.classList.remove("ring");
+              dot.classList.add("hover:scale-150");
+            }
+          });
+        }
+      }
+    }
+
+    private next() {
+      this.index = (this.index + 1) % this.total;
+      this.move();
+    }
+
+    private prev() {
+      this.index = (this.index - 1 + this.total) % this.total;
+      this.move();
+    }
+  }
+
+  customElements.define("image-carousel", Carousel);
+</script>
+
+<style>
+  .carousel {
+    @apply overflow-hidden whitespace-nowrap relative shadow-md dark:bg-gray-100;
+  }
+  .carousel-inner {
+    @apply flex transition-transform duration-[0.3s] ease-[ease];
+  }
+  .carousel-wrapper {
+    @apply inline-block min-w-full box-border;
+  }
+</style>
