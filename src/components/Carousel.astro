@@ -58,8 +58,9 @@ const {
   class Carousel extends HTMLElement {
     private index: number = 0;
     private total: number = 0;
-    private wrappers: NodeListOf<HTMLElement>;
     private dots: NodeListOf<HTMLElement>;
+    private wrappers: NodeListOf<HTMLElement>;
+    private intervalId: NodeJS.Timeout | null = null;
 
     constructor() {
       super();
@@ -68,17 +69,31 @@ const {
       this.total = this.wrappers.length;
 
       this.dots = document.querySelectorAll(`#carousel-dot-${this.dataset.id}`);
-      this.dots.forEach((dot, index) => {
+      this.dots.forEach(dot => {
         dot.addEventListener("click", event => {
           const target = event.currentTarget as HTMLElement;
           this.index = Number(target.dataset.index);
+          this.restartInterval();
           this.move();
         });
       });
     }
 
     connectedCallback() {
-      setInterval(() => this.next(), Number(this.dataset.duration));
+      this.startInterval(); // Start interval when component is connected
+    }
+
+    private startInterval() {
+      this.intervalId = setInterval(() => this.next(), Number(this.dataset.duration));
+    }
+
+    private restartInterval() {
+      // Clear existing interval if it's running
+      if (this.intervalId !== null) {
+        clearInterval(this.intervalId);
+      }
+      // Start a new interval
+      this.startInterval();
     }
 
     private move() {
@@ -105,11 +120,6 @@ const {
 
     private next() {
       this.index = (this.index + 1) % this.total;
-      this.move();
-    }
-
-    private prev() {
-      this.index = (this.index - 1 + this.total) % this.total;
       this.move();
     }
   }
