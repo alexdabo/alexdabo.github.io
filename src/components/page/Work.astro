@@ -4,21 +4,17 @@ import Section from "@component/Section.astro";
 import { EXPERIENCE } from "@config/link";
 import Logo from "@component/Logo.astro";
 import { Works } from "@schema";
+import Carousel from "@component/Carousel.astro";
 ---
 
 <Section id={EXPERIENCE.id} label={EXPERIENCE.name}>
   <div class="flex flex-col gap-y-16">
     {
       Works.map(item => (
-        <article class="flex flex-col space-x-0 space-y-8 _group md:flex-row md:space-x-8 md:space-y-0">
+        <article class="flex flex-col space-x-0 space-y-8 md:flex-row md:space-x-8 md:space-y-0">
           <div class="w-full md:w-1/2">
             <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-              <img
-                loading="lazy"
-                alt={item.name}
-                src={item.image}
-                class="object-cover object-center w-full h-full transition duration-500 scale-100 md:group-hover:scale-105"
-              />
+              <Carousel dots images={item.images} />
             </div>
           </div>
 

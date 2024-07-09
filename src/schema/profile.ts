@@ -45,9 +45,9 @@ export const Profile: ProfileResume = {
   name: "Alexander Bonilla",
   label: "Ing. en sistemas & computación",
   greeting: "Hola, soy alexander",
-  // image: "https://avatars.githubusercontent.com/u/29008617",
-  image:
-    "https://ojdt.com.ve/archivos/styles/height/public/team/joaquin-dongoroz_4.jpg",
+  image: "https://avatars.githubusercontent.com/u/29008617",
+  // image:
+  //   "https://ojdt.com.ve/archivos/styles/height/public/team/joaquin-dongoroz_4.jpg",
   email: "adbonilla.ad@gmail.com",
   phone: "593979728686",
   url: "https://alexdabo.github.io",
