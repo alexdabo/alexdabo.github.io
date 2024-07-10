@@ -11,6 +11,7 @@ interface Skill {
 }
 
 export const TechnicalSkills: Array<TechnicalSkill> = [
+  { name: "Herramientas", keywords: [Logo.linux, Logo.git] },
   {
     name: "Leguajes",
     keywords: [Logo.go, Logo.java, Logo.node, Logo.typescript],

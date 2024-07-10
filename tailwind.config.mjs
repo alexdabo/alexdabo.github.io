@@ -24,6 +24,10 @@ export default {
           node: '#41873F',
           typescript: '#3178c6',
 
+          // tool
+          git:'#de4c36',
+          linux:'#505050',
+
           //web
           astro: '#ff5d01',
           react: '#00d8ff',

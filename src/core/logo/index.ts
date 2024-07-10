@@ -1,5 +1,6 @@
-import { Mongodb, MySQL, Postgres, type DbLogoName } from "./db";
 import { Go, Java, Node, TypeScript, type LangLogoName } from "./lang";
+import { Mongodb, MySQL, Postgres, type DbLogoName } from "./db";
+import { Git, Linux, type ToolLogoName } from "./tools";
 import { Astro, React, Vue, type WebLogoName } from "./web";
 import {
   type ApiLogoName,
@@ -11,7 +12,12 @@ import {
   Sri,
 } from "./api";
 
-export type LogoName = ApiLogoName | DbLogoName | LangLogoName | WebLogoName;
+export type LogoName =
+  | ApiLogoName
+  | DbLogoName
+  | LangLogoName
+  | ToolLogoName
+  | WebLogoName;
 
 type LogoElement = {
   [K in LogoName]: string;
@@ -67,6 +73,10 @@ export const Logo: TagElement = {
     website: "https://typescriptlang.org",
   },
 
+  // Tools
+  git: { logo: "git", name: "Git", website: "https://git-scm.com" },
+  linux: { logo: "linux", name: "Linux", website: "https://www.linux.org" },
+
   // Web
   astro: { logo: "astro", name: "Astro", website: "https://astro.build" },
   react: { logo: "react", name: "React", website: "https://reactjs.org" },
@@ -92,6 +102,10 @@ export const Logos: LogoElement = {
   java: Java,
   node: Node,
   typescript: TypeScript,
+
+  // Tools
+  git: Git,
+  linux: Linux,
 
   // Web
   astro: Astro,
