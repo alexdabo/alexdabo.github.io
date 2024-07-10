@@ -13,7 +13,7 @@ export function SectionLayout(): Layout {
     paddingBottom: (i) => (i % 2 === 1 ? 10 : 0),
 
     vLineWidth: () => 0,
-    hLineColor: () => Color.Third,
+    hLineColor: () => Color.Secondary,
     hLineWidth: (i) => (i % 2 === 1 ? 2 : 0),
   };
 }
@@ -29,7 +29,7 @@ export function HLineLayout(): Layout {
     paddingTop: (i, node) => (i < node.table.body.length ? 5 : 0),
     paddingBottom: (i, node) => (i + 1 < node.table.body.length ? 5 : 0),
     vLineWidth: () => 0,
-    hLineColor: () => Color.LightGrey,
+    hLineColor: () => Color.Grey,
     hLineStyle: () => ({ dash: { length: 4, space: 4 } }),
     hLineWidth: (i, node) => (i > 0 && i < node.table.body.length ? 1 : 0),
   };

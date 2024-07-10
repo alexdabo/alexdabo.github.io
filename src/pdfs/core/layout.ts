@@ -24,8 +24,8 @@ export function Layout(
             [
               {
                 type: "none",
-                lineHeight: 1.5,
-                alignment: "center",
+
+                alignment: "right",
                 ul: [
                   {
                     style: "layout_title",
@@ -33,7 +33,7 @@ export function Layout(
                   },
                   {
                     style: "layout_subtitle",
-                    text: Profile.label.toUpperCase(),
+                    text: Profile.label,
                   },
                 ],
               },
@@ -42,7 +42,7 @@ export function Layout(
         },
       },
       {
-        columnGap: 10,
+        columnGap: 20,
         columns: [
           { width: sideWidth, ...side },
           { width: mainWidth, ...main },
@@ -52,7 +52,7 @@ export function Layout(
 
     ...options,
     defaultStyle: {
-      color: Color.SlateGrey,
+      color: Color.Text,
       fontSize: FontSize.Small,
       ...options.defaultStyle,
     },
@@ -65,8 +65,8 @@ export function Layout(
       },
       layout_subtitle: {
         bold: true,
-        fontSize: FontSize.Normal,
-        color: Color.Primary,
+        color: "#FCB93B",
+        fontSize: FontSize.Small,
       },
     },
   };

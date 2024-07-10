@@ -1,9 +1,9 @@
 export enum Color {
-  SlateGrey = "#2E2E2E",
-  LightGrey = "#666666",
-  Primary = "#001F5A",
+  Text = "#2E2E2E",
+  Grey = "#666666",
   Link = "#0039AC",
-  Third = "#F3890B",
+  Primary = "#001F5A",
+  Secondary = "#FCB93B",
 }
 
 export enum FontSize {

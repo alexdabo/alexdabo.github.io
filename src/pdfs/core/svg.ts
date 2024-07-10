@@ -31,7 +31,7 @@ type ChipProps = Omit<ContentSvg, "svg" | "width" | "height"> & {
 };
 
 export function Chip(props: ChipProps): ContentSvg {
-  const { label, color = Color.LightGrey, ...svgProps } = props;
+  const { label, color = Color.Grey, ...svgProps } = props;
   const width = 15 + 6 * label.length;
   return {
     ...svgProps,
@@ -39,7 +39,7 @@ export function Chip(props: ChipProps): ContentSvg {
     height: 20,
     svg: `<svg fill="none" stroke="${color}">
         <rect x="1" y="1" width="${width - 2}" height="18" rx="5" fill="none"></rect>
-        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${color}" font-size="8px">${label}</text>
+        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${color}" font-size="8px" stroke-width="0.5">${label}</text>
     </svg>`,
   };
 }

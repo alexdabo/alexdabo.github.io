@@ -47,7 +47,9 @@ const SKILL_TABLE: Table = {
           {
             columnGap: 2,
             margin: [0, 5],
-            columns: skill.keywords.map((tag) => Chip({ label: tag.name })),
+            columns: skill.keywords
+              .filter((i) => i.pdf)
+              .map((tag) => Chip({ label: tag.name })),
           },
         ],
       },
@@ -237,7 +239,7 @@ export const PortfolioDefinition: TDocumentDefinitions = Layout(
           [{ text: ABOUT.label?.toUpperCase(), style: "section" }],
           [{ text: Profile.description, alignment: "justify" }],
 
-          [{ text: EXPERIENCE.label?.toUpperCase(), style: "section" }],
+          [{ text: EXPERIENCE.name?.toUpperCase(), style: "section" }],
           [{ layout: HLineLayout(), table: EXPERIENCE_TABLE }],
 
           [{ text: "PROYECTOS", style: "section" }],
