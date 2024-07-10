@@ -97,7 +97,7 @@ const EXPERIENCE_TABLE: Table = {
                       { text: `${item.position} `, style: "mainTitle" },
                       { text: item.name, link: item.url, color: Color.Link },
                     ],
-                    width: 260,
+                    width: 240,
                   },
                   IconLabel("calendar", {
                     text: `${item.startDate} - ${item.endDate}`,
@@ -131,7 +131,7 @@ const PROJECT_TABLE: Table = {
             [
               {
                 columns: [
-                  { text: item.name, style: "mainTitle", width: 260 },
+                  { text: item.name, style: "mainTitle", width: 240 },
                   IconLabel("calendar", {
                     text: `${item.startDate} - ${item.endDate}`,
                   }),
@@ -164,7 +164,7 @@ const EDUCATION_TABLE: Table = {
             [
               {
                 columns: [
-                  { text: item.studyType, style: "mainTitle", width: 260 },
+                  { text: item.studyType, style: "mainTitle", width: 240 },
                   IconLabel("calendar", {
                     text: `${item.startDate} - ${item.endDate}`,
                   }),
