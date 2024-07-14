@@ -84,7 +84,7 @@ const LANGUAGE_TABLE: Table = {
 //#region
 const EXPERIENCE_TABLE: Table = {
   body: [
-    ...Works.map((item) => [
+    ...Works.filter(i=>i.pdf).map((item) => [
       {
         layout: "noBorders",
         table: {
