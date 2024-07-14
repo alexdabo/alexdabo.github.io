@@ -39,10 +39,11 @@ const {
   {
     images.length > 1 && dots && (
       <div class="flex flex-row justify-center items-center gap-2 pb-2">
-        {images.map((_, index) => (
+        {images.map((item, index) => (
           <button
             data-index={index}
             id={`carousel-dot-${id}`}
+            aria-label={item.alt}
             class:list={[
               index === 0 ? "ring" : "hover:scale-150",
               "rounded-full w-2 h-2 shadow opacity-70 ring-offset-1 ring-primary-700 bg-primary-500 hover:bg-primary-600"
