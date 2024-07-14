@@ -30,9 +30,9 @@ export const Projects: Array<Project> = [
     github: "https://github.com/bamboo",
     images: [
       { src: BambooLogin.src, alt: "Bamboo login" },
-    { src: BambooMain.src, alt: "Bamboo main" },
-    { src: BambooDash.src, alt: "Bamboo dashboard" },
-    { src: BambooMeasurers.src, alt: "Bamboo lista de medidores" }
+      { src: BambooMain.src, alt: "Bamboo main" },
+      { src: BambooDash.src, alt: "Bamboo dashboard" },
+      { src: BambooMeasurers.src, alt: "Bamboo lista de medidores" },
     ],
     highlights: [Logo.java, Logo.rest, Logo.vue],
   },

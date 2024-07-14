@@ -34,10 +34,10 @@ export const Works: Array<Work> = [
     name: "Pegaso Solutions",
     position: "Desarrollador",
     images: [
-      { src: GalenoLogin.src ,alt:'Galeno login'},
-      { src: GalenoMain.src ,alt:'Galeno main'},
-      { src: GalenoConsulting.src ,alt:'Galeno consulta médica'},
-      { src: GalenoSale.src ,alt:'Galeno venta en farmacia'},
+      { src: GalenoLogin.src, alt: "Galeno login" },
+      { src: GalenoMain.src, alt: "Galeno main" },
+      { src: GalenoConsulting.src, alt: "Galeno consulta médica" },
+      { src: GalenoSale.src, alt: "Galeno venta en farmacia" },
     ],
     url: "https://pegasosolutionsec.com/galeno",
     summary:
@@ -53,10 +53,10 @@ export const Works: Array<Work> = [
     name: "Pegaso Solutions",
     position: "Desarrollador",
     images: [
-      { src: CifraLogin.src, alt: 'Cifra login' },
-      { src: CifraSale.src, alt: 'Cifra punto de venta' },
-      { src: CifraUpload.src, alt: 'Cifra carga masiva de comprobantes' },
-      { src: CifraKardex.src, alt: 'Cifra kardex' },
+      { src: CifraLogin.src, alt: "Cifra login" },
+      { src: CifraSale.src, alt: "Cifra punto de venta" },
+      { src: CifraUpload.src, alt: "Cifra carga masiva de comprobantes" },
+      { src: CifraKardex.src, alt: "Cifra kardex" },
     ],
     url: "https://pegasosolutionsec.com/cifra",
     summary:
@@ -72,11 +72,11 @@ export const Works: Array<Work> = [
     name: "Pegaso Solutions",
     position: "Desarrollador",
     images: [
-      { src: QRCodeLogin.src, alt: 'QRCode login' },
-      { src: QRCodeMain.src, alt: 'QRCode main' },
-      { src: QRCodeExam.src, alt: 'QRCode exámenes' },
-      { src: QRCodeHistory.src, alt: 'QRCode historial de exámenes' },
-      { src: QRCodeResult.src, alt: 'QRCode resulttados' },
+      { src: QRCodeLogin.src, alt: "QRCode login" },
+      { src: QRCodeMain.src, alt: "QRCode main" },
+      { src: QRCodeExam.src, alt: "QRCode exámenes" },
+      { src: QRCodeHistory.src, alt: "QRCode historial de exámenes" },
+      { src: QRCodeResult.src, alt: "QRCode resulttados" },
     ],
     url: "https://pegasosolutionsec.com/labs-qr-code-generator/",
     summary:
