@@ -24,8 +24,8 @@ const description = props.description ?? Profile.description;
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="profile" />
-<meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
+<meta property="og:url" content={Profile.url} />
 <meta property="og:image" content={Profile.image} />
 <meta property="og:description" content={description} />
 <meta property="profile:first_name" content={Profile.firstName} />
