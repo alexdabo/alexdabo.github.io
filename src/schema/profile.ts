@@ -56,7 +56,7 @@ export const Profile: ProfileResume = {
   about:
     "Mi nombre es Alexander David y me considero un entusiasta del código y de GNU/Linux. Desde que descubrí el fascinante mundo de Linux a los 13 años, he estado profundamente involucrado en el mundo de la informática.",
   description:
-    "Profesional con más de 3 años de trayectoria como Ingeniero en Sistemas y Computación, destacando en la creación de servicios y aplicaciones web personalizadas.",
+    "Profesional con más de 3 años de trayectoria como Ingeniero en Sistemas y Computación, con un enfoque en la creación de aplicaciones web personalizadas y servicios back-end utilizando Node.js y Express.js, logrando resultados efectivos y eficientes en diversos proyectos.",
 
   location: {
     address: "",
