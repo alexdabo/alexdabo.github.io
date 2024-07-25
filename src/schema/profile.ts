@@ -1,4 +1,5 @@
 import type { IconName } from "@core/icon";
+import { calculateYears } from "@core/util";
 
 interface Network {
   name: string;
@@ -51,12 +52,9 @@ export const Profile: ProfileResume = {
   email: "adbonilla.ad@gmail.com",
   phone: "593979728686",
   url: "https://alexdabo.github.io",
-  summary:
-    "Desarrollador web fullstack que disfruta enfrentando desafíos, diseñando soluciones eficientes y escalables.",
-  about:
-    "Mi nombre es Alexander David y me considero un entusiasta del código y de GNU/Linux. Desde que descubrí el fascinante mundo de Linux a los 13 años, he estado profundamente involucrado en el mundo de la informática.",
-  description:
-    "Profesional con más de 3 años de trayectoria como Ingeniero en Sistemas y Computación, con un enfoque en la creación de aplicaciones web personalizadas y servicios back-end utilizando Node.js y Express.js, logrando resultados efectivos y eficientes en diversos proyectos.",
+  summary: `Desarrollador web fullstack que disfruta enfrentando desafíos, diseñando soluciones eficientes y escalables.`,
+  about: `Mi nombre es Alexander David y me considero un entusiasta del código y de GNU/Linux. Desde que descubrí el fascinante mundo de Linux a los 13 años, he estado profundamente involucrado en el mundo de la informática.`,
+  description: `Profesional con más de ${calculateYears()} años de trayectoria como Ingeniero en Sistemas y Computación, con un enfoque en la creación de aplicaciones web personalizadas y APIs utilizando Node.js y Express.js, logrando resultados efectivos y eficientes en diversos proyectos.`,
 
   location: {
     address: "",
