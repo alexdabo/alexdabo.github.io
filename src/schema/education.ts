@@ -1,12 +1,4 @@
-interface Education {
-  institution: string;
-  url: string;
-  area: string;
-  studyType: string;
-  startDate: string;
-  endDate: string;
-  courses: string[];
-}
+import type { Education } from "./model/education";
 
 export const Educations: Array<Education> = [
   {

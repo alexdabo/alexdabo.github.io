@@ -1,14 +1,7 @@
-import { Logo, type LogoTag } from "@core/logo";
+import type { Skill, TechnicalSkill } from "./model/skill";
+import { Logo } from "@core/logo";
 
-interface TechnicalSkill {
-  name: string;
-  keywords: Array<LogoTag>;
-}
 
-interface Skill {
-  name: string;
-  keywords: Array<string>;
-}
 
 export const TechnicalSkills: Array<TechnicalSkill> = [
   { name: "Herramientas", keywords: [Logo.linux, Logo.git] },

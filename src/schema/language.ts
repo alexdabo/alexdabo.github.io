@@ -1,7 +1,4 @@
-interface Language {
-  language: string;
-  fluency: string;
-}
+import type { Language } from "./model/language";
 
 export const Languages: Array<Language> = [
   { language: "Español", fluency: "Nativo" },

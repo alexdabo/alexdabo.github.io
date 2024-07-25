@@ -6,20 +6,8 @@ import SishoMain from "@assets/image/sisho-main.png";
 import SishoVS from "@assets/image/sisho-vs.png";
 import SishoReason from "@assets/image/sisho-reason.png";
 import SishoRecord from "@assets/image/sisho-record.png";
-import { Logo, type LogoTag } from "@core/logo";
-import type { ImageSource } from "@core/model";
-
-export interface Project {
-  name: string;
-  place: string;
-  startDate: string;
-  endDate: string;
-  description: string;
-  highlights: Array<LogoTag>;
-  url?: string;
-  github?: string;
-  images: Array<ImageSource>;
-}
+import type { Project } from "./model/project";
+import { Logo } from "@core/logo";
 
 export const Projects: Array<Project> = [
   {

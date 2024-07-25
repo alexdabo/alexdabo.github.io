@@ -1,10 +1,5 @@
-import type { IconName } from "@core/icon";
+import type { Interest } from "./model/interest";
 
-interface Interest {
-  name: string;
-  icon: IconName;
-  reason: string;
-}
 
 export const Interests: Array<Interest> = [
   {

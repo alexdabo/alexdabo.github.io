@@ -1,4 +1,3 @@
-import { Logo, type LogoTag } from "@core/logo";
 import GalenoLogin from "@assets/image/galeno-login.png";
 import CifraLogin from "@assets/image/cifra-login.png";
 import QRCodeLogin from "@assets/image/qrcode-login.png";
@@ -12,20 +11,8 @@ import GalenoSale from "@assets/image/galeno-venta.png";
 import CifraKardex from "@assets/image/cifra-kardex.png";
 import CifraSale from "@assets/image/cifra-sale.png";
 import CifraUpload from "@assets/image/cifra-upload.png";
-import type { ImageSource } from "@core/model";
-
-interface Work {
-  pdf: boolean;
-  project: string;
-  name: string;
-  position: string;
-  url: string;
-  startDate: string;
-  endDate: string;
-  summary: string;
-  images: Array<ImageSource>;
-  highlights: Array<LogoTag>;
-}
+import type { Work } from "./model/work";
+import { Logo } from "@core/logo";
 
 export const Works: Array<Work> = [
   {
