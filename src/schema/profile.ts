@@ -1,3 +1,4 @@
+import Avatar from "@assets/image/profile/formal.jpg";
 import type { ProfileResume } from "./model/profile";
 import { calculateYears } from "@core/util";
 
@@ -7,9 +8,8 @@ export const Profile: ProfileResume = {
   name: "Alexander Bonilla",
   label: "Ing. en sistemas & computación",
   greeting: "Hola, soy alexander",
-  image: "https://avatars.githubusercontent.com/u/29008617",
-  // image:
-  //   "https://ojdt.com.ve/archivos/styles/height/public/team/joaquin-dongoroz_4.jpg",
+
+  image: Avatar.src,
   email: "adbonilla.ad@gmail.com",
   phone: "593979728686",
   url: "https://alexdabo.github.io",
