@@ -1,11 +1,11 @@
-import BambooLogin from "@assets/image/bamboo-login.png";
-import BambooDash from "@assets/image/bamboo-dashboard.png";
-import BambooMain from "@assets/image/bamboo-main.png";
-import BambooMeasurers from "@assets/image/bamboo-measurers.png";
-import SishoMain from "@assets/image/sisho-main.png";
-import SishoVS from "@assets/image/sisho-vs.png";
-import SishoReason from "@assets/image/sisho-reason.png";
-import SishoRecord from "@assets/image/sisho-record.png";
+import BambooLogin from "@assets/image/bamboo/login.png";
+import BambooDash from "@assets/image/bamboo/dashboard.png";
+import BambooMain from "@assets/image/bamboo/main.png";
+import BambooMeasurers from "@assets/image/bamboo/measurers.png";
+import SishoMain from "@assets/image/sisho/main.png";
+import SishoVS from "@assets/image/sisho/vs.png";
+import SishoReason from "@assets/image/sisho/reason.png";
+import SishoRecord from "@assets/image/sisho/record.png";
 import type { Project } from "./model/project";
 import { Logo } from "@core/logo";
 
