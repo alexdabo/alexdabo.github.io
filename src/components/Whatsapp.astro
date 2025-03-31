@@ -1,0 +1,17 @@
+---
+import Tooltip from "./Tooltip.astro";
+import { Profile } from "@schema";
+import Icon from "./Icon.astro";
+---
+
+<div class="fixed bottom-4 right-10 flex">
+  <Tooltip title={Profile.network.whatsapp.name}>
+    <a
+      target="_blank"
+      href={Profile.network.whatsapp.url}
+      class="p-3 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transform transition-all duration-300 ease-in-out scale-100 hover:scale-110 animate-bounce"
+    >
+      <Icon icon={Profile.network.whatsapp.icon} size="48" strokeWidth={1.5} />
+    </a>
+  </Tooltip>
+</div>
