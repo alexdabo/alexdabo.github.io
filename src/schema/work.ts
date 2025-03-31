@@ -31,7 +31,7 @@ export const Works: Array<Work> = [
       "Desarrollar sistemas para la gestión integral en hospitales, abarcando áreas como farmacia, consultorios médicos/odontológicos, imagenología y entrega de informes médicos.",
 
     startDate: "02/2021",
-    endDate: "05/2023",
+    endDate: "05/2024",
     highlights: [Logo.java, Logo.nest, Logo.graphql, Logo.sri, Logo.react],
   },
   {
@@ -50,7 +50,7 @@ export const Works: Array<Work> = [
       "Desarrollar un sistema contable integral con facturación electrónica, informes detallados, balances precisos y gestión eficiente de inventarios.",
 
     startDate: "02/2021",
-    endDate: "05/2023",
+    endDate: "05/2024",
     highlights: [Logo.java, Logo.nest, Logo.graphql, Logo.sri, Logo.react],
   },
   {
@@ -70,7 +70,7 @@ export const Works: Array<Work> = [
       "Desarrollar una aplicación que genere códigos QR para resultados de Laboratorio Clínico y otros exámenes médicos, facilitando su publicación.",
 
     startDate: "02/2021",
-    endDate: "05/2023",
+    endDate: "05/2022",
     highlights: [Logo.express, Logo.rest, Logo.vue],
   },
 ];

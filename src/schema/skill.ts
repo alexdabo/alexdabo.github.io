@@ -2,6 +2,8 @@ import type { Skill, TechnicalSkill } from "./model/skill";
 import { Logo } from "@core/logo";
 
 export const TechnicalSkills: Array<TechnicalSkill> = [
+  { name: "Manejo de redes", keywords: [] },
+  { name: "Seguridad informática", keywords: [] },
   { name: "Herramientas", keywords: [Logo.linux, Logo.git] },
   {
     name: "Leguajes",
