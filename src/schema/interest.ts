@@ -1,6 +1,5 @@
 import type { Interest } from "./model/interest";
 
-
 export const Interests: Array<Interest> = [
   {
     icon: "judo",

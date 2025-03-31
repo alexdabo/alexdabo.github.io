@@ -1,8 +1,6 @@
 import type { Skill, TechnicalSkill } from "./model/skill";
 import { Logo } from "@core/logo";
 
-
-
 export const TechnicalSkills: Array<TechnicalSkill> = [
   { name: "Herramientas", keywords: [Logo.linux, Logo.git] },
   {
