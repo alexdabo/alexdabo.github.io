@@ -35,6 +35,7 @@ export interface ProfileResume {
   about: string;
   summary: string;
   description: string;
+  ogDescription: string;
   location: Location;
   network: Networks;
 }

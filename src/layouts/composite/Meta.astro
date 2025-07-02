@@ -7,7 +7,7 @@ interface Props {
 
 const props = Astro.props;
 const title = props.title ?? Profile.name;
-const description = props.description ?? Profile.description;
+const description = props.description ?? Profile.ogDescription;
 ---
 
 <!-- Global Metadata -->
