@@ -27,15 +27,19 @@ import Icon from "./Icon.astro";
 
       /** Set the theme to dark/light mode. */
       const setTheme = (dark: boolean) => {
-        document.documentElement.classList[dark ? "add" : "remove"]("dark");
+        if (dark) {
+          localStorage.setItem("dark", "ok");
+          document.documentElement.classList.add("dark");
+        } else {
+          localStorage.removeItem("dark");
+          document.documentElement.classList.remove("dark");
+        }
+
         button.setAttribute("aria-pressed", String(dark));
       };
 
       // Toggle the theme when a user clicks the button.
       button.addEventListener("click", () => setTheme(!this.isDark()));
-
-      // Initialize button state to reflect current theme.
-      setTheme(this.isDark());
     }
 
     isDark() {
