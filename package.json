@@ -1,8 +1,13 @@
 {
+  "type": "module",
+  "version": "0.0.2",
   "name": "portfolio",
   "author": "Alexander Bonilla",
-  "type": "module",
-  "version": "0.0.1",
+  "displayName": "Mi portafolio",
+   "repository": {
+    "type": "git",
+    "url": "https://github.com/alexdabo/alexdabo.github.io.git"
+  },
   "scripts": {
     "start": "astro dev",
     "start:dev": "astro dev",

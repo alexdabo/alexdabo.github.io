@@ -1,0 +1,51 @@
+---
+import { displayName, version, repository } from "../../package.json";
+import ThemeToggle from "@component/ThemeToggle.astro";
+import ButtonLink from "@component/ButtonLink.astro";
+import Layout from "@layout/Layout.astro";
+
+const now = new Date();
+
+// Function to format two digits (ex: 08, 09, etc.)
+const pad = (n: number) => String(n).padStart(2, "0");
+
+const publishAt = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}`;
+
+const metadata = [
+  { name: "Nombre", content: displayName },
+  { name: "Versión", content: version },
+  { name: "Publicación", content: publishAt },
+  { name: "Repositorio", content: repository.url }
+];
+---
+
+<Layout>
+  <div class="absolute top-5 right-5 flex flex-row items-center gap-3">
+    <ButtonLink link="/" id="home">Inicio</ButtonLink>
+    <ThemeToggle />
+  </div>
+  <div class="flex items-center min-h-screen">
+    <div
+      class="space-y-3 block p-5 rounded-md shadow-lg backdrop-blur dark:bg-white/10 bg-gray-500/10"
+    >
+      {
+        metadata.map(item => (
+          <dl class="flex flex-col sm:flex-row gap-1">
+            <dt class="min-w-40">
+              <span class="block text-sm text-gray-700 font-medium dark:text-gray-200">
+                {item.name}:
+              </span>
+            </dt>
+            <dd>
+              <ul>
+                <li class="me-1 inline-flex items-center text-sm text-gray-900 dark:text-neutral-200">
+                  {item.content}
+                </li>
+              </ul>
+            </dd>
+          </dl>
+        ))
+      }
+    </div>
+  </div>
+</Layout>
