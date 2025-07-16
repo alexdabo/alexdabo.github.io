@@ -9,6 +9,6 @@ export const PortfolioMetadata: TDocumentInformation = {
   creator: Profile.name,
   producer: Profile.name,
   title: Profile.greeting,
-  subject: Profile.summary,
+  subject: Profile.ogDescription,
   keywords: `CV ${Profile.lastName} ${Profile.firstName}, ${Profile.email}, ${Profile.phone}`,
 };
