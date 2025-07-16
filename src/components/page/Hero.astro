@@ -2,6 +2,7 @@
 import ButtonLink from "@component/ButtonLink.astro";
 import { HOME } from "@config/link";
 import { Profile } from "@schema";
+
 const networks = [Profile.network.cv, Profile.network.email, Profile.network.github];
 ---
 
@@ -21,7 +22,7 @@ const networks = [Profile.network.cv, Profile.network.email, Profile.network.git
       {Profile.summary}
     </p>
   </article>
-  <div class="grid grid-flow-row grid-cols-2 md:grid-flow-col gap-3">
+  <div class="flex flex-wrap justify-center gap-3">
     {
       networks.map(item => (
         <ButtonLink
