@@ -28,7 +28,7 @@ export interface ProfileResume {
   greeting: string
   name: string
   label: string
-  image: string
+  image: ImageMetadata
   email: string
   phone: string
   url: string

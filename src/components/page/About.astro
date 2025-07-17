@@ -1,6 +1,7 @@
 ---
 import Section from '@component/Section.astro'
 import { Interests, Profile } from '@schema'
+import { Image } from 'astro:assets'
 import { ABOUT } from '@config/link'
 ---
 
@@ -24,14 +25,13 @@ import { ABOUT } from '@config/link'
       }
     </div>
 
-    <img
-      width="200"
-      height="200"
+    <Image
+      width={300}
+      height={400}
       loading="lazy"
       alt={Profile.name}
       src={Profile.image}
       class="order-1 md:order-2 object-cover w-64 h-full p-1 rotate-3 aspect-square rounded-2xl bg-primary-300 dark:bg-primary-200"
-      style="object-position: 50% 50%"
     />
   </article>
 </Section>

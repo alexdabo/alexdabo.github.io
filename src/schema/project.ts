@@ -19,10 +19,10 @@ export const Projects: Array<Project> = [
       'Desarrollo del sistema informático para las juntas de administración de agua SENAGUA y capacitación del sistema informático.',
     github: 'https://github.com/alexdabo/bamboo',
     images: [
-      { src: BambooLogin.src, alt: 'Bamboo login' },
-      { src: BambooMain.src, alt: 'Bamboo main' },
-      { src: BambooDash.src, alt: 'Bamboo dashboard' },
-      { src: BambooMeasurers.src, alt: 'Bamboo lista de medidores' }
+      { image: BambooLogin, alt: 'Bamboo login' },
+      { image: BambooMain, alt: 'Bamboo main' },
+      { image: BambooDash, alt: 'Bamboo dashboard' },
+      { image: BambooMeasurers, alt: 'Bamboo lista de medidores' }
     ],
     highlights: [Logo.java, Logo.rest, Logo.vue]
   },
@@ -35,10 +35,10 @@ export const Projects: Array<Project> = [
     description:
       'Desarrollo del sistema de historias clínicas para el Hospital Universitario Andino.',
     images: [
-      { src: SishoMain.src, alt: 'Sisho main' },
-      { src: SishoVS.src, alt: 'Sisho signos vitales' },
-      { src: SishoReason.src, alt: 'Sisho razón' },
-      { src: SishoRecord.src, alt: 'Sisho resultado' }
+      { image: SishoMain, alt: 'Sisho main' },
+      { image: SishoVS, alt: 'Sisho signos vitales' },
+      { image: SishoReason, alt: 'Sisho razón' },
+      { image: SishoRecord, alt: 'Sisho resultado' }
     ],
     highlights: [Logo.node, Logo.loopback, Logo.rest]
   }

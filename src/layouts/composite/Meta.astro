@@ -1,4 +1,5 @@
 ---
+import Avatar from '@assets/image/profile/formal.jpg'
 import { Profile } from '@schema'
 interface Props {
   title?: string
@@ -26,7 +27,7 @@ const description = props.description ?? Profile.ogDescription
 <meta property="og:type" content="profile" />
 <meta property="og:title" content={title} />
 <meta property="og:url" content={Profile.url} />
-<meta property="og:image" content={`${Profile.url}${Profile.image}`} />
+<meta property="og:image" content={`${Profile.url}${Profile.image.src}`} />
 <meta property="og:description" content={description} />
 <meta property="profile:first_name" content={Profile.firstName} />
 <meta property="profile:last_name" content={Profile.lastName} />

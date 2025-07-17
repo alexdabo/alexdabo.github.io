@@ -1,5 +1,5 @@
 import { calculateYears, chooseByMode, filename } from '@core/util'
-import Avatar from '@assets/image/profile/formal.jpg'
+import Avatar from '@assets/image/profile/formal.jpeg'
 import type { ProfileResume } from './model/profile'
 
 const profileName = 'Alexander Bonilla'
@@ -10,7 +10,7 @@ export const Profile: ProfileResume = {
   lastName: 'Bonilla Adriano',
   greeting: 'Hola, soy alexander',
   label: 'Ing. en sistemas & computación',
-  image: Avatar.src,
+  image: Avatar,
   email: 'adbonilla.ad@gmail.com',
   phone: '593979728686',
   url: 'https://alexdabo.github.io',

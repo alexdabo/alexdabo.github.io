@@ -1,5 +1,6 @@
 ---
 import type { ImageSource } from '@core/model'
+import { Image } from 'astro:assets'
 
 interface Props {
   id?: string
@@ -33,10 +34,12 @@ const {
     {
       images.map(item => (
         <div id={`carousel-wrapper-${id}`} class="inline-block min-w-full box-border">
-          <img
-            src={item.src}
-            alt={item.alt}
+          <Image
+            width={1000}
+            height={675}
             loading="lazy"
+            alt={item.alt}
+            src={item.image}
             class="object-cover object-center w-full h-full transition duration-500 md:hover:scale-105"
           />
         </div>
