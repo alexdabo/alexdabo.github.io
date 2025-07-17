@@ -1,4 +1,4 @@
 export interface ImageSource {
-  src: string;
-  alt?: string;
+  src: string
+  alt?: string
 }

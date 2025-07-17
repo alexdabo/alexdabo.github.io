@@ -1,2 +1,2 @@
-export * from "./element";
-export * from "./tag";
+export * from './element'
+export * from './tag'

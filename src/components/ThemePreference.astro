@@ -5,11 +5,11 @@
    * @returns {boolean} True if dark mode is preferred, false otherwise.
    */
   function getThemePreference() {
-    if (typeof localStorage !== "undefined") {
-      return localStorage.getItem("dark") === "ok";
+    if (typeof localStorage !== 'undefined') {
+      return localStorage.getItem('dark') === 'ok'
     }
 
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
   }
 
   /**
@@ -17,17 +17,17 @@
    * Also sets `aria-pressed` on the toggle button for accessibility.
    */
   function applyThemePreference() {
-    const prefersDark = getThemePreference();
+    const prefersDark = getThemePreference()
 
     if (prefersDark) {
-      document.documentElement.classList.add("dark");
+      document.documentElement.classList.add('dark')
 
-      const button = document.getElementById("toggle-theme");
+      const button = document.getElementById('toggle-theme')
       if (button) {
-        button.setAttribute("aria-pressed", "true");
+        button.setAttribute('aria-pressed', 'true')
       }
     }
   }
 
-  applyThemePreference();
+  applyThemePreference()
 </script>

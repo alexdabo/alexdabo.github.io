@@ -1,5 +1,5 @@
-import type { TableLayout as Layout } from "pdfmake/interfaces";
-import { Color } from "./enum";
+import type { TableLayout as Layout } from 'pdfmake/interfaces'
+import { Color } from './enum'
 
 /**
  * Table layout whit horizontal line
@@ -9,13 +9,13 @@ export function SectionLayout(): Layout {
   return {
     paddingLeft: () => 0,
     paddingRight: () => 2,
-    paddingTop: (i) => (i % 2 === 1 ? 10 : 0),
-    paddingBottom: (i) => (i % 2 === 1 ? 10 : 0),
+    paddingTop: i => (i % 2 === 1 ? 10 : 0),
+    paddingBottom: i => (i % 2 === 1 ? 10 : 0),
 
     vLineWidth: () => 0,
     hLineColor: () => Color.Secondary,
-    hLineWidth: (i) => (i % 2 === 1 ? 2 : 0),
-  };
+    hLineWidth: i => (i % 2 === 1 ? 2 : 0)
+  }
 }
 
 /**
@@ -31,6 +31,6 @@ export function HLineLayout(): Layout {
     vLineWidth: () => 0,
     hLineColor: () => Color.Grey,
     hLineStyle: () => ({ dash: { length: 4, space: 4 } }),
-    hLineWidth: (i, node) => (i > 0 && i < node.table.body.length ? 1 : 0),
-  };
+    hLineWidth: (i, node) => (i > 0 && i < node.table.body.length ? 1 : 0)
+  }
 }

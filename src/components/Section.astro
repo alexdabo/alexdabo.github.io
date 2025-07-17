@@ -1,15 +1,15 @@
 ---
-import type { IconName } from "@core/icon";
-import Icon from "./Icon.astro";
+import type { IconName } from '@core/icon'
+import Icon from './Icon.astro'
 
 interface Props {
-  id: string;
-  label?: string;
-  icon?: IconName;
-  class?: string;
+  id: string
+  label?: string
+  icon?: IconName
+  class?: string
 }
 
-const { class: className, id, label, icon } = Astro.props;
+const { class: className, id, label, icon } = Astro.props
 ---
 
 <section

@@ -3,7 +3,7 @@ export default {
   plugins: ["prettier-plugin-astro"],
   overrides: [
     {
-      files: "*.astro",
+      files: "*.{astro,ts,tsx}",
       options: {
         arrowParens: "avoid",
         bracketSpacing: true,
@@ -13,11 +13,10 @@ export default {
         proseWrap: "preserve",
         quoteProps: "as-needed",
         requirePragma: false,
-        semi: true,
-        singleQuote: false,
+        semi: false,
+        singleQuote: true,
         tabWidth: 2,
-        trailingComma: "none",
-        parser: "astro",
+        trailingComma: "none"
       },
     },
   ],

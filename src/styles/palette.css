@@ -1,0 +1,41 @@
+@theme {
+    --color-primary-50: #fffbeb;
+    --color-primary-100: #fff3c6;
+    --color-primary-200: #ffe588;
+    --color-primary-300: #ffd249;
+    --color-primary-400: #ffbd20;
+    --color-primary-500: #faa115;
+    --color-primary-600: #dd7302;
+    --color-primary-700: #b75006;
+    --color-primary-800: #953d0b;
+    --color-primary-900: #7a320d;
+    --color-primary-950: #461902;
+
+    /* api */
+    --color-logo-express: #252525;
+    --color-logo-loopback: #ffffff;
+    --color-logo-nest: #e0234e;
+    --color-logo-graphql: #e10098;
+    --color-logo-sri: #0758a1;
+
+    /* db */
+    --color-logo-mongodb: #01ec64;
+    --color-logo-mysql: #00546b;
+    --color-logo-postgres: #336791;
+
+    /* lang */
+    --color-logo-go: #00A7D0;
+    --color-logo-java: #5382a1;
+    --color-logo-node: #41873F;
+    --color-logo-typescript: #3178c6;
+
+    /* tool */
+    --color-logo-git: #de4c36;
+    --color-logo-linux: #505050;
+
+    /* web */
+    --color-logo-astro: #ff5d01;
+    --color-logo-react: #00d8ff;
+    --color-logo-vue: #41b883;
+
+}

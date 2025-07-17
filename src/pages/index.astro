@@ -1,12 +1,12 @@
 ---
-import Project from "@component/page/Project.astro";
-import About from "@component/page/About.astro";
-import Skill from "@component/page/Skill.astro";
-import Work from "@component/page/Work.astro";
-import Layout from "@layout/Layout.astro";
-import Hero from "@component/page/Hero.astro";
-import Whatsapp from "@component/Whatsapp.astro";
-import Header from "@layout/composite/Header.astro";
+import Project from '@component/page/Project.astro'
+import About from '@component/page/About.astro'
+import Skill from '@component/page/Skill.astro'
+import Work from '@component/page/Work.astro'
+import Layout from '@layout/Layout.astro'
+import Hero from '@component/page/Hero.astro'
+import Whatsapp from '@component/Whatsapp.astro'
+import Header from '@layout/composite/Header.astro'
 ---
 
 <Layout>
@@ -20,16 +20,16 @@ import Header from "@layout/composite/Header.astro";
 </Layout>
 
 <script>
-  import { Profile } from "@schema";
+  import { Profile } from '@schema'
 
-  document.addEventListener("keydown", function (event) {
+  document.addEventListener('keydown', function (event) {
     // Check if Ctrl (or Cmd on Mac) + p is pressed
-    if ((event.ctrlKey || event.metaKey) && event.key === "p") {
+    if ((event.ctrlKey || event.metaKey) && event.key === 'p') {
       // Prevent default Ctrl + p behavior (like print dialog)
-      event.preventDefault();
+      event.preventDefault()
 
       // Redirect to /pdf
-      window.location.href = Profile.network.cv.url;
+      window.location.href = Profile.network.cv.url
     }
-  });
+  })
 </script>

@@ -1,1 +1,1 @@
-export * from "./year";
+export * from './year'
