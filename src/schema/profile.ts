@@ -1,14 +1,15 @@
+import { calculateYears, chooseByMode, filename } from '@core/util'
 import Avatar from '@assets/image/profile/formal.jpg'
 import type { ProfileResume } from './model/profile'
-import { calculateYears } from '@core/util'
+
+const profileName = 'Alexander Bonilla'
 
 export const Profile: ProfileResume = {
+  name: profileName,
   firstName: 'Alexander David',
   lastName: 'Bonilla Adriano',
-  name: 'Alexander Bonilla',
-  label: 'Ing. en sistemas & computación',
   greeting: 'Hola, soy alexander',
-
+  label: 'Ing. en sistemas & computación',
   image: Avatar.src,
   email: 'adbonilla.ad@gmail.com',
   phone: '593979728686',
@@ -26,36 +27,41 @@ export const Profile: ProfileResume = {
     region: ''
   },
   network: {
-    cv: { name: 'Descargar', icon: 'cv', url: '/pdf', label: 'Descargar CV' },
+    cv: {
+      icon: 'cv',
+      name: 'Descargar',
+      label: 'Descargar CV',
+      url: chooseByMode('/pdf/cv.pdf', '/pdf/' + filename(profileName, '.pdf'))
+    },
     email: {
-      name: 'Correo',
       icon: 'email',
-      url: 'mailto:adbonilla.ad@gmail.com',
-      label: 'adbonilla.ad@gmail.com'
+      name: 'Correo',
+      label: 'adbonilla.ad@gmail.com',
+      url: 'mailto:adbonilla.ad@gmail.com'
     },
     github: {
-      name: 'GitHub',
       icon: 'github',
-      url: 'https://github.com/alexdabo',
-      label: 'github.com/alexdabo'
+      name: 'GitHub',
+      label: 'github.com/alexdabo',
+      url: 'https://github.com/alexdabo'
     },
     mobile: {
-      name: 'Teléfono',
       icon: 'phone',
-      url: 'tel:+593979728686',
-      label: '+593979728686'
+      name: 'Teléfono',
+      label: '+593979728686',
+      url: 'tel:+593979728686'
     },
     whatsapp: {
-      name: 'WhatsApp',
       icon: 'whatsapp',
-      url: 'https://wa.me/593979728686',
-      label: '+593979728686'
+      name: 'WhatsApp',
+      label: '+593979728686',
+      url: 'https://wa.me/593979728686'
     },
     website: {
-      name: 'Sitio web',
       icon: 'web',
-      url: 'https://alexdabo.github.io',
-      label: 'alexdabo.github.io'
+      name: 'Sitio web',
+      label: 'alexdabo.github.io',
+      url: 'https://alexdabo.github.io'
     }
   }
 }
