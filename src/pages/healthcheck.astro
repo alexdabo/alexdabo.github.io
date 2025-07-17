@@ -2,19 +2,16 @@
 import { displayName, version, repository } from '../../package.json'
 import ThemeToggle from '@component/ThemeToggle.astro'
 import ButtonLink from '@component/ButtonLink.astro'
+import { formatDateToTimezone } from '@core/util'
 import Layout from '@layout/Layout.astro'
 
-const now = new Date()
-
-// Function to format two digits (ex: 08, 09, etc.)
-const pad = (n: number) => String(n).padStart(2, '0')
-
-const publishAt = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}`
+const timeZone = 'America/Guayaquil'
+const publishAt = formatDateToTimezone(new Date(), timeZone)
 
 const metadata = [
   { name: 'Nombre', content: displayName },
   { name: 'Versión', content: version },
-  { name: 'Publicación', content: publishAt },
+  { name: 'Publicación', content: `${publishAt} ${timeZone}` },
   { name: 'Repositorio', content: repository.url }
 ]
 ---
