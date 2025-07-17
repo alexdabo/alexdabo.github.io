@@ -1,34 +1,34 @@
-import type { Skill, TechnicalSkill } from "./model/skill";
-import { Logo } from "@core/logo";
+import type { Skill, TechnicalSkill } from './model/skill'
+import { Logo } from '@core/logo'
 
 export const TechnicalSkills: Array<TechnicalSkill> = [
-  { name: "Manejo de redes", keywords: [] },
-  { name: "Seguridad informática", keywords: [] },
-  { name: "Herramientas", keywords: [Logo.linux, Logo.git] },
+  { name: 'Manejo de redes', keywords: [] },
+  { name: 'Seguridad informática', keywords: [] },
+  { name: 'Herramientas', keywords: [Logo.linux, Logo.git] },
   {
-    name: "Leguajes",
-    keywords: [Logo.go, Logo.java, Logo.node, Logo.typescript],
+    name: 'Leguajes',
+    keywords: [Logo.go, Logo.java, Logo.node, Logo.typescript]
   },
   {
-    name: "Servicio web",
-    keywords: [Logo.express, Logo.nest, Logo.graphql],
+    name: 'Servicio web',
+    keywords: [Logo.express, Logo.nest, Logo.graphql]
   },
   {
-    name: "Desarrollo web",
-    keywords: [Logo.astro, Logo.react, Logo.vue],
+    name: 'Desarrollo web',
+    keywords: [Logo.astro, Logo.react, Logo.vue]
   },
   {
-    name: "Bases de datos",
-    keywords: [Logo.mongodb, Logo.mysql, Logo.postgres],
-  },
-];
+    name: 'Bases de datos',
+    keywords: [Logo.mongodb, Logo.mysql, Logo.postgres]
+  }
+]
 
 export const PersonalSkills: Skill = {
-  name: "Persolanes",
+  name: 'Persolanes',
   keywords: [
-    "Resolutivo",
-    "Habilidad empática.",
-    "Trabajo colaborativo.",
-    "Me apasiona compartir lo que he aprendido.",
-  ],
-};
+    'Resolutivo',
+    'Habilidad empática.',
+    'Trabajo colaborativo.',
+    'Me apasiona compartir lo que he aprendido.'
+  ]
+}

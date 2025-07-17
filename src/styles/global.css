@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@import './palette.css';
+@import './safelist.css';
+@import './custom.css';

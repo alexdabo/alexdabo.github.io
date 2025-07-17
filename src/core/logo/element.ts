@@ -1,13 +1,13 @@
-import { LoopBack, Express, GraphQL, Nest, Rest, Sri } from "./content/api";
-import { Go, Java, Node, TypeScript } from "./content/lang";
-import { Mongodb, MySQL, Postgres } from "./content/db";
-import { Astro, React, Vue } from "./content/web";
-import { Git, Linux } from "./content/tools";
-import type { LogoName } from "./content";
+import { LoopBack, Express, GraphQL, Nest, Rest, Sri } from './content/api'
+import { Go, Java, Node, TypeScript } from './content/lang'
+import { Mongodb, MySQL, Postgres } from './content/db'
+import { Astro, React, Vue } from './content/web'
+import { Git, Linux } from './content/tools'
+import type { LogoName } from './content'
 
 type LogoElement = {
-  [K in LogoName]: string;
-};
+  [K in LogoName]: string
+}
 
 export const Logos: LogoElement = {
   // Api
@@ -36,5 +36,5 @@ export const Logos: LogoElement = {
   // Web
   astro: Astro,
   react: React,
-  vue: Vue,
-};
+  vue: Vue
+}

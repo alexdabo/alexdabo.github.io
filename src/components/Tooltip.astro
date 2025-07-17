@@ -1,24 +1,24 @@
 ---
 interface Props {
-  title?: string;
-  color?: string;
+  title?: string
+  color?: string
 }
 
-const { title, color = "gray-800" } = Astro.props;
+const { title, color = 'gray-800' } = Astro.props
 const classes = [
   `text-white bg-${color}/90`,
-  "absolute z-10  px-2 py-1 rounded-md shadow-md left-1/2 bottom-full mb-2 opacity-0"
-];
+  'absolute z-10  px-2 py-1 rounded-md shadow-md left-1/2 bottom-full mb-2 opacity-0'
+]
 
 if (!!title) {
   classes.push(
     `after:absolute after:top-full after:left-1/2 after:border-8 after:-ml-2 after:border-t-${color}/90 after:border-transparent`,
-    "-translate-x-1/2 transition-opacity delay-300 duration-500 invisible group-hover:visible group-hover:opacity-100"
-  );
+    '-translate-x-1/2 transition-opacity delay-300 duration-500 invisible group-hover:visible group-hover:opacity-100'
+  )
 }
 ---
 
-<div class="flex relative inline-block cursor-pointer group">
+<div class="relative inline-block cursor-pointer group">
   <slot />
   <div class:list={classes}>
     <span class="text-nowrap max-w-20 text-center"> {title}</span>

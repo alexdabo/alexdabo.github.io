@@ -1,16 +1,16 @@
 ---
-import type { IconName } from "@core/icon";
-import Icon from "./Icon.astro";
-import Tooltip from "./Tooltip.astro";
+import type { IconName } from '@core/icon'
+import Icon from './Icon.astro'
+import Tooltip from './Tooltip.astro'
 
 interface Props {
-  id: string;
-  tooltip?: string;
-  icon?: IconName;
-  link?: string;
-  target?: "_self" | "_blank" | "_parent" | "_top";
+  id: string
+  tooltip?: string
+  icon?: IconName
+  link?: string
+  target?: '_self' | '_blank' | '_parent' | '_top'
 }
-const { id, tooltip, icon, link, target } = Astro.props;
+const { id, tooltip, icon, link, target } = Astro.props
 ---
 
 <Tooltip title={tooltip}>

@@ -1,0 +1,4 @@
+.nav-shadown{
+    @apply shadow-lg ring-1 backdrop-blur text-gray-900 bg-white/50 ring-white/10
+}
+

@@ -1,13 +1,13 @@
 ---
-import { Profile } from "@schema";
+import { Profile } from '@schema'
 interface Props {
-  title?: string;
-  description?: string;
+  title?: string
+  description?: string
 }
 
-const props = Astro.props;
-const title = props.title ?? Profile.name;
-const description = props.description ?? Profile.ogDescription;
+const props = Astro.props
+const title = props.title ?? Profile.name
+const description = props.description ?? Profile.ogDescription
 ---
 
 <!-- Global Metadata -->

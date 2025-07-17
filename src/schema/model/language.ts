@@ -1,4 +1,4 @@
 export interface Language {
-  language: string;
-  fluency: string;
+  language: string
+  fluency: string
 }

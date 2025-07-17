@@ -1,0 +1,22 @@
+
+@source inline("bg-gray-800/90");
+@source inline("bg-logo-{git,linux}/{10,90}");
+@source inline("bg-logo-{astro,react,vue}/{10,90}");
+@source inline("bg-logo-{go,java,node,typescript}/{10,90}");
+@source inline("bg-logo-{mongodb,mysql,postgres}/{10,90}");
+@source inline("bg-logo-{express,loopback,nest,graphql,sri}/{10,90}");
+
+
+@source inline("{hover:,dark:hover:}shadow-logo-{git,linux}/50");
+@source inline("{hover:,dark:hover:}shadow-logo-{astro,react,vue}/50");
+@source inline("{hover:,dark:hover:}shadow-logo-{go,java,node,typescript}/50");
+@source inline("{hover:,dark:hover:}shadow-logo-{mongodb,mysql,postgres}/50");
+@source inline("{hover:,dark:hover:}shadow-logo-{express,loopback,nest,graphql,sri}/50");
+
+
+@source inline("{after:}border-t-gray-800/90");
+@source inline("{after:}border-t-logo-{git,linux}/90");
+@source inline("{after:}border-t-logo-{astro,react,vue}/90");
+@source inline("{after:}border-t-logo-{go,java,node,typescript}/90");
+@source inline("{after:}border-t-logo-{mongodb,mysql,postgres}/90");
+@source inline("{after:}border-t-logo-{express,loopback,nest,graphql,sri}/90");

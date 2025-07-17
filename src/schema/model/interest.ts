@@ -1,7 +1,7 @@
-import type { IconName } from "@core/icon";
+import type { IconName } from '@core/icon'
 
 export interface Interest {
-  name: string;
-  icon: IconName;
-  reason: string;
+  name: string
+  icon: IconName
+  reason: string
 }

@@ -1,31 +1,38 @@
 ---
-import type { ImageSource } from "@core/model";
+import type { ImageSource } from '@core/model'
 
 interface Props {
-  id?: string;
+  id?: string
   /**
    * Use dots to navidate [default:false]
    */
-  dots?: boolean;
+  dots?: boolean
   /**
    * Duration on ms [default:6000]
    */
-  duration?: number;
-  images: Array<ImageSource>;
+  duration?: number
+  images: Array<ImageSource>
 }
 const {
   images,
   dots = false,
   duration = 6000,
   id = Math.random().toString(36).substring(2, 9)
-} = Astro.props;
+} = Astro.props
 ---
 
-<image-carousel data-id={id} data-duration={duration} class="carousel">
-  <div id={`carousel-inner-${id}`} class="carousel-inner">
+<image-carousel
+  data-id={id}
+  data-duration={duration}
+  class="overflow-hidden whitespace-nowrap relative shadow-mdshadow-md dark:bg-gray-100"
+>
+  <div
+    id={`carousel-inner-${id}`}
+    class="flex transition-transform duration-[0.3s] ease-[ease]"
+  >
     {
       images.map(item => (
-        <div id={`carousel-wrapper-${id}`} class="carousel-wrapper">
+        <div id={`carousel-wrapper-${id}`} class="inline-block min-w-full box-border">
           <img
             src={item.src}
             alt={item.alt}
@@ -45,8 +52,8 @@ const {
             id={`carousel-dot-${id}`}
             aria-label={item.alt}
             class:list={[
-              index === 0 ? "ring" : "hover:scale-150",
-              "rounded-full w-2 h-2 shadow opacity-70 ring-offset-1 ring-primary-700 bg-primary-500 hover:bg-primary-600"
+              index === 0 ? 'ring' : 'hover:scale-150',
+              'rounded-full w-2 h-2 shadow opacity-70 ring-offset-1 ring-primary-700 bg-primary-500 hover:bg-primary-600'
             ]}
           />
         ))}
@@ -57,85 +64,73 @@ const {
 
 <script>
   class Carousel extends HTMLElement {
-    private index: number = 0;
-    private total: number = 0;
-    private dots: NodeListOf<HTMLElement>;
-    private wrappers: NodeListOf<HTMLElement>;
-    private intervalId: NodeJS.Timeout | null = null;
+    private index: number = 0
+    private total: number = 0
+    private dots: NodeListOf<HTMLElement>
+    private wrappers: NodeListOf<HTMLElement>
+    private intervalId: NodeJS.Timeout | null = null
 
     constructor() {
-      super();
+      super()
 
-      this.wrappers = document.querySelectorAll(`#carousel-wrapper-${this.dataset.id}`);
-      this.total = this.wrappers.length;
+      this.wrappers = document.querySelectorAll(`#carousel-wrapper-${this.dataset.id}`)
+      this.total = this.wrappers.length
 
-      this.dots = document.querySelectorAll(`#carousel-dot-${this.dataset.id}`);
+      this.dots = document.querySelectorAll(`#carousel-dot-${this.dataset.id}`)
       this.dots.forEach(dot => {
-        dot.addEventListener("click", event => {
-          const target = event.currentTarget as HTMLElement;
-          this.index = Number(target.dataset.index);
-          this.restartInterval();
-          this.move();
-        });
-      });
+        dot.addEventListener('click', event => {
+          const target = event.currentTarget as HTMLElement
+          this.index = Number(target.dataset.index)
+          this.restartInterval()
+          this.move()
+        })
+      })
     }
 
     connectedCallback() {
-      this.startInterval(); // Start interval when component is connected
+      this.startInterval() // Start interval when component is connected
     }
 
     private startInterval() {
-      this.intervalId = setInterval(() => this.next(), Number(this.dataset.duration));
+      this.intervalId = setInterval(() => this.next(), Number(this.dataset.duration))
     }
 
     private restartInterval() {
       // Clear existing interval if it's running
       if (this.intervalId !== null) {
-        clearInterval(this.intervalId);
+        clearInterval(this.intervalId)
       }
       // Start a new interval
-      this.startInterval();
+      this.startInterval()
     }
 
     private move() {
       if (this.wrappers) {
-        const carouselWidth = this.wrappers[0].offsetWidth;
-        const newPosition = -this.index * carouselWidth;
+        const carouselWidth = this.wrappers[0].offsetWidth
+        const newPosition = -this.index * carouselWidth
 
-        const id = `#carousel-inner-${this.dataset.id}`;
-        const carousel = document.querySelector(id) as HTMLElement;
+        const id = `#carousel-inner-${this.dataset.id}`
+        const carousel = document.querySelector(id) as HTMLElement
         if (carousel) {
-          carousel.style.transform = `translateX(${newPosition}px)`;
+          carousel.style.transform = `translateX(${newPosition}px)`
           this.dots.forEach(dot => {
             if (dot.dataset.index === String(this.index)) {
-              dot.classList.add("ring");
-              dot.classList.remove("hover:scale-150");
+              dot.classList.add('ring')
+              dot.classList.remove('hover:scale-150')
             } else {
-              dot.classList.remove("ring");
-              dot.classList.add("hover:scale-150");
+              dot.classList.remove('ring')
+              dot.classList.add('hover:scale-150')
             }
-          });
+          })
         }
       }
     }
 
     private next() {
-      this.index = (this.index + 1) % this.total;
-      this.move();
+      this.index = (this.index + 1) % this.total
+      this.move()
     }
   }
 
-  customElements.define("image-carousel", Carousel);
+  customElements.define('image-carousel', Carousel)
 </script>
-
-<style>
-  .carousel {
-    @apply overflow-hidden whitespace-nowrap relative shadow-md dark:bg-gray-100;
-  }
-  .carousel-inner {
-    @apply flex transition-transform duration-[0.3s] ease-[ease];
-  }
-  .carousel-wrapper {
-    @apply inline-block min-w-full box-border;
-  }
-</style>

@@ -1,9 +1,10 @@
-import { defineConfig } from "astro/config";
+// @ts-check
+import { defineConfig } from 'astro/config';
 
-import tailwind from "@astrojs/tailwind";
+import tailwind from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()],
+  vite: { plugins: [tailwind()] },
   site: 'https://alexdabo.github.io',
 });
