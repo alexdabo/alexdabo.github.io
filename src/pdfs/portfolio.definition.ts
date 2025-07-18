@@ -12,7 +12,8 @@ import {
   Interests,
   Languages,
   Projects,
-  Profile,
+  Network,
+  Document,
   Works
 } from '@schema'
 
@@ -23,16 +24,14 @@ import {
 
 const CONTACT_TABLE: Table = {
   widths: ['*'],
-  body: [Profile.network.email, Profile.network.whatsapp, Profile.network.website].map(
-    lang => [
-      {
-        stack: [
-          { text: lang.name, style: 'sideTitle' },
-          { text: lang.label, color: Color.Link, link: lang.url }
-        ]
-      }
-    ]
-  )
+  body: [Network.email, Network.whatsapp, Network.website].map(lang => [
+    {
+      stack: [
+        { text: lang.name, style: 'sideTitle' },
+        { text: lang.label, color: Color.Link, link: lang.url }
+      ]
+    }
+  ])
 }
 
 const SKILL_TABLE: Table = {
@@ -231,7 +230,7 @@ export const PortfolioDefinition: TDocumentDefinitions = Layout(
       table: {
         body: [
           [{ text: ABOUT.label?.toUpperCase(), style: 'section' }],
-          [{ text: Profile.description, alignment: 'justify' }],
+          [{ text: Document.description, alignment: 'justify' }],
 
           [{ text: EXPERIENCE.name?.toUpperCase(), style: 'section' }],
           [{ layout: HLineLayout(), table: EXPERIENCE_TABLE }],

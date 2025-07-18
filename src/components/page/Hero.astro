@@ -1,9 +1,9 @@
 ---
 import ButtonLink from '@component/ButtonLink.astro'
+import { Network, Profile, Web } from '@schema'
 import { HOME } from '@config/link'
-import { Profile } from '@schema'
 
-const networks = [Profile.network.cv, Profile.network.email, Profile.network.github]
+const webNetwork = [Network.cv, Network.email, Network.github]
 ---
 
 <section
@@ -15,16 +15,16 @@ const networks = [Profile.network.cv, Profile.network.email, Profile.network.git
     <h2
       class="text-3xl text-secondary bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent animate-pulse"
     >
-      {Profile.label}
+      {Web.label}
     </h2>
 
     <p class="py-4 px-6 md:px-2 text-md text-gray-500">
-      {Profile.summary}
+      {Web.summary}
     </p>
   </article>
   <div class="flex flex-wrap justify-center gap-3">
     {
-      networks.map(item => (
+      webNetwork.map(item => (
         <ButtonLink
           link={item.url}
           icon={item.icon}

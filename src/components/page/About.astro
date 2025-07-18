@@ -1,6 +1,6 @@
 ---
 import Section from '@component/Section.astro'
-import { Interests, Profile } from '@schema'
+import { Interests, Profile, Web } from '@schema'
 import { Image } from 'astro:assets'
 import { ABOUT } from '@config/link'
 ---
@@ -13,7 +13,7 @@ import { ABOUT } from '@config/link'
       class="[&>p]:mb-4 [&>p>strong]:text-primary-500 dark:[&>p>strong]:text-primary-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
     >
       <p>
-        {Profile.about}
+        {Web.about}
       </p>
 
       {
@@ -30,7 +30,7 @@ import { ABOUT } from '@config/link'
       height={400}
       loading="lazy"
       alt={Profile.name}
-      src={Profile.image}
+      src={Web.image}
       class="order-1 md:order-2 object-cover w-64 h-full p-1 rotate-3 aspect-square rounded-2xl bg-primary-300 dark:bg-primary-200"
     />
   </article>

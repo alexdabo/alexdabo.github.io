@@ -1,41 +1,19 @@
-import type { IconName } from '@core/icon'
+import type { Person } from '@core/util'
+import type { Network } from './network'
 
-interface Network {
-  name: string
-  label: string
-  url: string
-  icon: IconName
-}
-interface Networks {
-  cv: Network
-  email: Network
-  github: Network
-  mobile: Network
-  whatsapp: Network
-  website: Network
-}
-interface Location {
-  address: string
-  postalCode: string
-  city: string
-  countryCode: string
-  region: string
-}
-
-export interface ProfileResume {
-  firstName: string
-  lastName: string
+export type ProfileData = Omit<Person, 'format'> & {
   greeting: string
-  name: string
-  label: string
+}
+
+export type WebProfileData = {
+  ogDescription: string
   image: ImageMetadata
-  email: string
-  phone: string
-  url: string
   about: string
   summary: string
+  label: string
+}
+
+export type DocumentProfileData = {
+  subject: string
   description: string
-  ogDescription: string
-  location: Location
-  network: Networks
 }

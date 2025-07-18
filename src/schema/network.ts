@@ -1,0 +1,36 @@
+import { filename } from '@core/util'
+import type { Networks } from './model/network'
+import { Profile } from './profile'
+
+export const Network: Networks = {
+  cv: {
+    icon: 'cv',
+    name: 'Descargar',
+    label: 'Descargar CV',
+    url: '/pdf/' + filename(Profile.name, '.pdf')
+  },
+  email: {
+    icon: 'email',
+    name: 'Correo',
+    label: 'adbonilla.ad@gmail.com',
+    url: 'mailto:adbonilla.ad@gmail.com'
+  },
+  github: {
+    icon: 'github',
+    name: 'GitHub',
+    label: 'github.com/alexdabo',
+    url: 'https://github.com/alexdabo'
+  },
+  whatsapp: {
+    icon: 'whatsapp',
+    name: 'WhatsApp',
+    label: '+593979728686',
+    url: 'https://wa.me/593979728686'
+  },
+  website: {
+    icon: 'web',
+    name: 'Sitio web',
+    label: 'alexdabo.github.io',
+    url: 'https://alexdabo.github.io'
+  }
+}

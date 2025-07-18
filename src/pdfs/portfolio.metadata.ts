@@ -1,14 +1,14 @@
-import { Profile } from '@schema'
+import { Document, Network, Profile } from '@schema'
 import type { TDocumentInformation } from 'pdfmake/interfaces'
 
 /**
  * metadata info
  */
 export const PortfolioMetadata: TDocumentInformation = {
-  author: Profile.name,
+  author: Profile.alias,
   creator: Profile.name,
   producer: Profile.name,
   title: Profile.greeting,
-  subject: Profile.ogDescription,
-  keywords: `CV ${Profile.lastName} ${Profile.firstName}, ${Profile.email}, ${Profile.phone}`
+  subject: Document.subject,
+  keywords: [Profile.fullName, Network.email.label, Network.whatsapp.label].join()
 }

@@ -1,6 +1,6 @@
 import type { ContentTable, TDocumentDefinitions } from 'pdfmake/interfaces'
 import { Color, FontSize } from './enum'
-import { Profile } from '@schema'
+import { Profile, Web } from '@schema'
 
 type Content = ContentTable & { width?: number | '*' | 'auto' }
 
@@ -25,11 +25,11 @@ export function Layout(content: Contents, options: Options): TDocumentDefinition
                 ul: [
                   {
                     style: 'layout_title',
-                    text: `${Profile.firstName} ${Profile.lastName}`.toUpperCase()
+                    text: Profile.name.toUpperCase()
                   },
                   {
                     style: 'layout_subtitle',
-                    text: Profile.label
+                    text: Web.label
                   }
                 ]
               }
