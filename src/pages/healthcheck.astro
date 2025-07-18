@@ -1,18 +1,18 @@
 ---
-import { displayName, version, repository } from '../../package.json'
 import ThemeToggle from '@component/ThemeToggle.astro'
 import ButtonLink from '@component/ButtonLink.astro'
 import { formatDateToTimezone } from '@core/util'
 import Layout from '@layout/Layout.astro'
+import { Pkg } from '@config/pkg'
 
 const timeZone = 'America/Guayaquil'
 const publishAt = formatDateToTimezone(new Date(), timeZone)
 
 const metadata = [
-  { name: 'Nombre', content: displayName },
-  { name: 'Versión', content: version },
+  { name: 'Nombre', content: Pkg.name },
+  { name: 'Versión', content: Pkg.version },
   { name: 'Publicación', content: `${publishAt} ${timeZone}` },
-  { name: 'Repositorio', content: repository.url }
+  { name: 'Repositorio', content: Pkg.repository }
 ]
 ---
 
