@@ -9,6 +9,9 @@ import SishoRecord from '@assets/image/sisho/record.png'
 import type { Project } from './model/project'
 import { Logo } from '@core/logo'
 
+/**
+ * A list of projects showcasing professional experience, achievements, and associated media.
+ */
 export const Projects: Array<Project> = [
   {
     name: 'Bamboo',

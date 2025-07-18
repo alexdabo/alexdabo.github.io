@@ -2,6 +2,12 @@ import { filename } from '@core/util'
 import type { Networks } from './model/network'
 import { Profile } from './profile'
 
+/**
+ * Collection of network/contact information.
+ *
+ * Includes key communication channels like CV download, email, GitHub, WhatsApp, and website,
+ * each with a name, label, URL, and an icon.
+ */
 export const Network: Networks = {
   cv: {
     icon: 'cv',

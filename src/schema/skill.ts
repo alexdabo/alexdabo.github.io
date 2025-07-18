@@ -1,6 +1,8 @@
 import type { Skill, TechnicalSkill } from './model/skill'
 import { Logo } from '@core/logo'
-
+/**
+ * A collection of technical skills grouped by category, each associated with relevant technology logos.
+ */
 export const TechnicalSkills: Array<TechnicalSkill> = [
   { name: 'Herramientas', keywords: [Logo.linux, Logo.git] },
   {
@@ -21,8 +23,11 @@ export const TechnicalSkills: Array<TechnicalSkill> = [
   }
 ]
 
+/**
+ * A set of personal skills highlighting soft skills and interpersonal qualities.
+ */
 export const PersonalSkills: Skill = {
-  name: 'Persolanes',
+  name: 'Personales',
   keywords: [
     'Resolutivo',
     'Habilidad empática.',

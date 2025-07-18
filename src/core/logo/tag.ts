@@ -1,16 +1,34 @@
 import type { LogoName } from './content'
 
+/**
+ * Represents metadata for a technology logo, including display settings and reference information.
+ */
 export type LogoTag = {
+  /** Indicates whether the logo should be included in PDF exports */
   pdf: boolean
+
+  /** Human-readable name of the technology or tool (e.g., "Node", "Vue", "GraphQL") */
   name: string
+
+  /** Identifier used to resolve the corresponding logo image or icon */
   logo: LogoName
+
+  /** Official website or documentation link for the technology */
   website: string
 }
 
+/**
+ * A mapping between technology identifiers (`LogoName`) and their associated `LogoTag` metadata.
+ */
 type TagElement = {
   [K in LogoName]: LogoTag
 }
 
+/**
+ * Centralized registry of technologies, tools, languages, frameworks, and services used across the application.
+ *
+ * Each entry includes display configuration, such as PDF visibility, label, logo ID, and a reference URL.
+ */
 export const Logo: TagElement = {
   // Api
   express: {

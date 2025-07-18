@@ -14,6 +14,10 @@ import CifraUpload from '@assets/image/cifra/upload.png'
 import type { Work } from './model/work'
 import { Logo } from '@core/logo'
 
+/**
+ * List of professional work experiences, each containing details about the project, position, duration,
+ * summary, related images, and key highlights represented by technology logos.
+ */
 export const Works: Array<Work> = [
   {
     pdf: true,

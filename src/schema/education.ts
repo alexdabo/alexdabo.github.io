@@ -1,5 +1,11 @@
 import type { Education } from './model/education'
 
+/**
+ * List of formal education records.
+ *
+ * Each entry represents an educational program or degree completed or in progress,
+ * containing details about the institution, field of study, and timeline.
+ */
 export const Educations: Array<Education> = [
   {
     institution: 'Universidad Nacional De Chimborazo',
