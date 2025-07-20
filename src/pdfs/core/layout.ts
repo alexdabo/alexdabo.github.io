@@ -1,35 +1,78 @@
-import type { ContentTable, TDocumentDefinitions } from 'pdfmake/interfaces'
+import type { ContentTable, ContentText, TDocumentDefinitions } from 'pdfmake/interfaces'
+import { Document, Languages, Network, Profile } from '@schema'
+import { generateVCard } from '@core/util'
 import { Color, FontSize } from './enum'
-import { Profile, Web } from '@schema'
+import { SectionLayout } from './table'
+import { IconLabel } from './svg'
 
-type Content = ContentTable & { width?: number | '*' | 'auto' }
-
-type Contents = [side: Content, main: Content]
 type Options = Omit<TDocumentDefinitions, 'content'>
 
-export function Layout(content: Contents, options: Options): TDocumentDefinitions {
-  const [{ width: sideWidth, ...side }, { width: mainWidth, ...main }] = content
+type LayoutContent = Array<ContentText | ContentTable>
+
+export function Layout(content: LayoutContent, options: Options): TDocumentDefinitions {
   return {
     content: [
       {
         marginBottom: 25,
         layout: 'noBorders',
         table: {
-          widths: ['*'],
+          widths: [90, 425],
           body: [
             [
               {
-                type: 'none',
-
-                alignment: 'right',
-                ul: [
+                stack: [
+                  {
+                    fit: 90,
+                    color: Color.Text,
+                    alignment: 'center',
+                    qr: generateVCard({
+                      firstName: Profile.alias,
+                      email: Network.email.label,
+                      phone: Network.whatsapp.label
+                    })
+                  },
+                  { text: 'Guardar contacto', alignment: 'center' }
+                ]
+              },
+              {
+                alignment: 'center',
+                stack: [
                   {
                     style: 'layout_title',
-                    text: Profile.name.toUpperCase()
+                    text: Profile.fullName.toUpperCase()
                   },
                   {
                     style: 'layout_subtitle',
-                    text: Web.label
+                    text: Document.keywords.join(' | ')
+                  },
+
+                  {
+                    marginTop: 5,
+                    marginBottom: 5,
+                    layout: 'noBorders',
+                    alignment: 'center',
+                    table: {
+                      widths: ['auto', 'auto', 'auto'],
+                      body: [
+                        [Network.email, Network.whatsapp, Network.website].map(item => ({
+                          margin: [10, 0],
+                          stack: [
+                            IconLabel(item.icon, {
+                              link: item.url,
+                              text: item.label,
+                              color: Color.Link,
+                              alignment: 'center'
+                            })
+                          ]
+                        }))
+                      ]
+                    }
+                  },
+                  {
+                    style: 'layout_languages',
+                    text: Languages.map(
+                      item => `${item.language} - ${item.fluency}`
+                    ).join(' | ')
                   }
                 ]
               }
@@ -38,11 +81,11 @@ export function Layout(content: Contents, options: Options): TDocumentDefinition
         }
       },
       {
-        columnGap: 20,
-        columns: [
-          { width: sideWidth, ...side },
-          { width: mainWidth, ...main }
-        ]
+        layout: SectionLayout(),
+        table: {
+          widths: ['*'],
+          body: content.map(item => [item])
+        }
       }
     ],
 
@@ -56,12 +99,17 @@ export function Layout(content: Contents, options: Options): TDocumentDefinition
       ...options.styles,
       layout_title: {
         bold: true,
-        fontSize: FontSize.XLarge,
-        color: Color.Primary
+        margin: [0, 0, 0, 8],
+        color: Color.Primary,
+        fontSize: FontSize.XLarge
       },
       layout_subtitle: {
         bold: true,
         color: '#FCB93B',
+        fontSize: FontSize.Medium
+      },
+      layout_languages: {
+        color: Color.Secondary,
         fontSize: FontSize.Small
       }
     }

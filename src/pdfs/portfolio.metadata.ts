@@ -1,5 +1,5 @@
 import type { TDocumentInformation } from 'pdfmake/interfaces'
-import { Document, Network, Profile } from '@schema'
+import { Document, Profile } from '@schema'
 import { Pkg } from '@config/pkg'
 
 /**
@@ -11,5 +11,5 @@ export const PortfolioMetadata: TDocumentInformation = {
   title: Profile.greeting,
   subject: Document.subject,
   producer: `${Pkg.name}@${Pkg.version}`,
-  keywords: [Profile.fullName, Network.email.label, Network.whatsapp.label].join()
+  keywords: Document.keywords.join(', ')
 }

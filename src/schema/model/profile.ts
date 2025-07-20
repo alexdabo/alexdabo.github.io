@@ -31,12 +31,16 @@ export type WebProfileData = {
 }
 
 /**
- * Represents profile content tailored for use in documents such as or PDFs.
+ * Represents structured profile content intended for export in documents such as PDFs.
+ * Commonly used in résumés or CVs to display a professional summary section.
  */
 export type DocumentProfileData = {
-  /** Section title (e.g., "Perfil profesional") */
+  /** Title of the section in the document (e.g., "Professional Profile") */
   subject: string
 
-  /** Detailed professional summary or career description */
+  /** Relevant keywords or tags associated with the candidate's expertise */
+  keywords: Array<string>
+
+  /** Comprehensive professional summary highlighting experience, skills, and focus areas */
   description: string
 }

@@ -1,14 +1,13 @@
 import type { APIRoute } from 'astro'
 import {
-  TechnicalSkills,
-  PersonalSkills,
   Educations,
   Interests,
   Languages,
+  Document,
   Projects,
   Network,
   Profile,
-  Document,
+  Skills,
   Works,
   Web
 } from '@schema'
@@ -18,15 +17,14 @@ export const GET: APIRoute = async () => {
     JSON.stringify({
       Profile,
       Web,
-      Export: Document,
+      Document,
       Network,
       Educations,
+      Skills,
       Works,
       Projects,
       Languages,
       Interests,
-      PersonalSkills,
-      TechnicalSkills
     }),
     {
       status: 200,

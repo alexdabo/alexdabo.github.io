@@ -24,7 +24,7 @@ export const Profile: ProfileData = {
  */
 export const Web: WebProfileData = {
   image: Avatar,
-  label: 'Ing. en sistemas & computación',
+  label: 'Fullstack Developer con enfoque en Backend',
   ogDescription: 'Soy tremendo programador.',
   about: `Mi nombre es Alexander David y me considero un entusiasta del código y de GNU/Linux. Desde que descubrí el fascinante mundo de Linux a los 13 años, he estado profundamente involucrado en el mundo de la informática.`,
   summary: `Desarrollador web fullstack que disfruta enfrentando desafíos, diseñando soluciones eficientes y escalables.`
@@ -36,5 +36,10 @@ export const Web: WebProfileData = {
  */
 export const Document: DocumentProfileData = {
   subject: 'Perfil profesional',
+  keywords: [
+    'Desarrollador Fullstack',
+    'APIs y Aplicaciones Web',
+    'Arquitectura de Software'
+  ],
   description: `Profesional con más de ${calculateYears()} años de trayectoria como Ingeniero en Sistemas y Computación, con un enfoque en la creación de aplicaciones web personalizadas y APIs utilizando Node.js y Express.js, logrando resultados efectivos y eficientes en diversos proyectos.`
 }

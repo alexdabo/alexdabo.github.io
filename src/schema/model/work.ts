@@ -5,8 +5,8 @@ import { type LogoTag } from '@core/logo'
  * Represents a professional work experience or project engagement.
  */
 export interface Work {
-  /** Indicates if the work has an associated PDF document or reference */
-  pdf: boolean
+  /** Indicates whether the work is exportable to a PDF document */
+  export: boolean
 
   /** Name of the project related to this work experience */
   project: string

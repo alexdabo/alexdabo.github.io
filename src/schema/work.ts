@@ -20,7 +20,7 @@ import { Logo } from '@core/logo'
  */
 export const Works: Array<Work> = [
   {
-    pdf: true,
+    export: true,
     project: 'Galeno',
     name: 'Pegaso Solutions',
     position: 'Desarrollador',
@@ -39,7 +39,7 @@ export const Works: Array<Work> = [
     highlights: [Logo.java, Logo.nest, Logo.graphql, Logo.sri, Logo.react]
   },
   {
-    pdf: false,
+    export: false,
     project: 'Cifra',
     name: 'Pegaso Solutions',
     position: 'Desarrollador',
@@ -58,7 +58,7 @@ export const Works: Array<Work> = [
     highlights: [Logo.java, Logo.nest, Logo.graphql, Logo.sri, Logo.react]
   },
   {
-    pdf: false,
+    export: false,
     project: 'Labs – QR Code Generator',
     name: 'Pegaso Solutions',
     position: 'Desarrollador',

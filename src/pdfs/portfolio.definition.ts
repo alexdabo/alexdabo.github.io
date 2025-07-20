@@ -1,186 +1,75 @@
+import { Educations, Interests, Projects, Document, Works } from '@schema'
 import type { TDocumentDefinitions, Table } from 'pdfmake/interfaces'
-import { HLineLayout, SectionLayout } from './core/table'
 import { PortfolioMetadata } from './portfolio.metadata'
-import { ABOUT, EXPERIENCE } from '@config/link'
+import { ABOUT, EXPERIENCE, PROJECT } from '@config/link'
 import { Color, FontSize } from './core/enum'
 import { Chip, IconLabel } from './core/svg'
+import { NewSection } from './core/section'
+import { HLineLayout } from './core/table'
 import { Layout } from './core/layout'
-import {
-  TechnicalSkills,
-  PersonalSkills,
-  Educations,
-  Interests,
-  Languages,
-  Projects,
-  Network,
-  Document,
-  Works
-} from '@schema'
 
-/************************************************
- *                     SIDE                     *
- ************************************************/
-//#region
-
-const CONTACT_TABLE: Table = {
-  widths: ['*'],
-  body: [Network.email, Network.whatsapp, Network.website].map(lang => [
-    {
-      stack: [
-        { text: lang.name, style: 'sideTitle' },
-        { text: lang.label, color: Color.Link, link: lang.url }
-      ]
-    }
-  ])
-}
-
-const SKILL_TABLE: Table = {
-  widths: ['*'],
-  body: [
-    ...TechnicalSkills.map(skill => [
-      {
-        stack: [
-          { text: skill.name, style: 'sideTitle' },
-          {
-            columnGap: 2,
-            margin: [0, 5],
-            columns: skill.keywords
-              .filter(i => i.pdf)
-              .map(tag => Chip({ label: tag.name }))
-          }
-        ]
-      }
-    ]),
-    [
-      [
-        {
-          stack: [
-            { text: PersonalSkills.name, style: 'sideTitle' },
-            {
-              ul: PersonalSkills.keywords.map(text => ({ text }))
-            }
-          ]
-        }
-      ]
-    ]
-  ]
-}
-
-const LANGUAGE_TABLE: Table = {
-  widths: ['auto', '*'],
-  body: Languages.map(lang => [
-    { text: lang.language, style: 'sideTitle' },
-    { text: lang.fluency, color: Color.Link }
-  ])
-}
 //#endregion
 
 /************************************************
  *                     MAIN                     *
  ************************************************/
 //#region
-const EXPERIENCE_TABLE: Table = {
-  body: [
-    ...Works.filter(i => i.pdf).map(item => [
-      {
-        layout: 'noBorders',
-        table: {
-          body: [
-            [
-              {
-                columns: [
-                  {
-                    text: [
-                      { text: `${item.position} `, style: 'mainTitle' },
-                      { text: item.name, link: item.url, color: Color.Link }
-                    ],
-                    width: 240
-                  },
-                  IconLabel('calendar', {
-                    text: `${item.startDate} - ${item.endDate}`
-                  })
-                ]
-              }
-            ],
-            [{ text: item.summary, alignment: 'justify' }],
-            [
-              {
-                columnGap: 5,
-                columns: item.highlights.map(element => Chip({ label: element.name }))
-              }
-            ]
-          ]
+const EXPERIENCE_TABLE: Table = NewSection(
+  Works.filter(i => i.export).map(item => ({
+    url: item.url,
+    alt: item.name,
+    title: item.position,
+    endDate: item.endDate,
+    startDate: item.startDate,
+    rows: [
+      [{ text: item.summary, alignment: 'justify' }],
+      [
+        {
+          columnGap: 5,
+          columns: item.highlights.map(element => Chip({ label: element.name }))
         }
-      }
-    ])
-  ]
-}
+      ]
+    ]
+  }))
+)
 
-const PROJECT_TABLE: Table = {
-  body: [
-    ...Projects.map(item => [
-      {
-        layout: 'noBorders',
-        table: {
-          body: [
-            [
-              {
-                columns: [
-                  { text: item.name, style: 'mainTitle', width: 240 },
-                  IconLabel('calendar', {
-                    text: `${item.startDate} - ${item.endDate}`
-                  })
-                ]
-              }
-            ],
-            [{ text: item.description, alignment: 'justify' }],
-            [
-              {
-                columnGap: 5,
-                columns: item.highlights.map(element => Chip({ label: element.name }))
-              }
-            ]
-          ]
+const PROJECT_TABLE: Table = NewSection(
+  Projects.map(item => ({
+    title: item.name,
+    endDate: item.endDate,
+    startDate: item.startDate,
+    rows: [
+      [{ text: item.description, alignment: 'justify' }],
+      [
+        {
+          columnGap: 5,
+          columns: item.highlights.map(element => Chip({ label: element.name }))
         }
-      }
-    ])
-  ]
-}
+      ]
+    ]
+  }))
+)
 
-const EDUCATION_TABLE: Table = {
-  body: [
-    ...Educations.map(item => [
-      {
-        layout: 'noBorders',
-        table: {
-          body: [
-            [
-              {
-                columns: [
-                  { text: item.studyType, style: 'mainTitle', width: 240 },
-                  IconLabel('calendar', {
-                    text: `${item.startDate} - ${item.endDate}`
-                  })
-                ]
-              }
-            ],
-            [
-              {
-                text: [
-                  { text: item.area },
-                  { text: ' ' },
-                  { text: item.institution, link: item.url, color: Color.Link },
-                  { text: '.' }
-                ],
-                alignment: 'justify'
-              }
-            ]
-          ]
+const EDUCATION_TABLE: Table = NewSection(
+  Educations.map(item => ({
+    title: item.studyType,
+    endDate: item.endDate,
+    startDate: item.startDate,
+    rows: [
+      [
+        {
+          text: [
+            { text: item.area },
+            { text: ' ' },
+            { text: item.institution, link: item.url, color: Color.Link },
+            { text: '.' }
+          ],
+          alignment: 'justify'
         }
-      }
-    ])
-  ]
-}
+      ]
+    ]
+  }))
+)
 
 const HOBBIES_TABLE: Table = {
   body: [
@@ -207,45 +96,20 @@ const HOBBIES_TABLE: Table = {
 
 export const PortfolioDefinition: TDocumentDefinitions = Layout(
   [
-    {
-      width: 150,
-      layout: SectionLayout(),
-      table: {
-        body: [
-          [{ text: 'CONTACTO', style: 'section' }],
-          [{ layout: HLineLayout(), table: CONTACT_TABLE }],
+    { text: (ABOUT.label ?? ABOUT.name).toUpperCase(), style: 'section' },
+    { text: Document.description, alignment: 'justify' },
 
-          [{ text: 'APTITUDES', style: 'section' }],
-          [{ layout: HLineLayout(), table: SKILL_TABLE }],
+    { text: EXPERIENCE.name?.toUpperCase(), style: 'section' },
+    { layout: HLineLayout(), table: EXPERIENCE_TABLE },
 
-          [{ text: 'IDIOMA', style: 'section' }],
-          [{ layout: HLineLayout(), table: LANGUAGE_TABLE }]
-        ]
-      }
-    },
+    { text: PROJECT.name, style: 'section' },
+    { layout: HLineLayout(), table: PROJECT_TABLE },
 
-    {
-      width: '*',
-      layout: SectionLayout(),
-      table: {
-        body: [
-          [{ text: ABOUT.label?.toUpperCase(), style: 'section' }],
-          [{ text: Document.description, alignment: 'justify' }],
+    { text: 'FORMACIÓN', style: 'section' },
+    { layout: HLineLayout(), table: EDUCATION_TABLE },
 
-          [{ text: EXPERIENCE.name?.toUpperCase(), style: 'section' }],
-          [{ layout: HLineLayout(), table: EXPERIENCE_TABLE }],
-
-          [{ text: 'PROYECTOS', style: 'section' }],
-          [{ layout: HLineLayout(), table: PROJECT_TABLE }],
-
-          [{ text: 'FORMACIÓN', style: 'section' }],
-          [{ layout: HLineLayout(), table: EDUCATION_TABLE }],
-
-          [{ text: 'HOBBIES', style: 'section' }],
-          [{ layout: HLineLayout(), table: HOBBIES_TABLE }]
-        ]
-      }
-    }
+    { text: 'HOBBIES', style: 'section' },
+    { layout: HLineLayout(), table: HOBBIES_TABLE }
   ],
   {
     pageMargins: [30, 30],

@@ -9,7 +9,8 @@ export enum Color {
 export enum FontSize {
   Tiny = 8,
   Small = 10,
+  Medium = 11,
   Normal = 12,
   Large = 14,
-  XLarge = 16
+  XLarge = 18
 }
