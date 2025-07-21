@@ -1,6 +1,6 @@
 import type { ProfileData, DocumentProfileData, WebProfileData } from './model/profile'
-import { calculateYears, NewPerson } from '@core/util'
 import Avatar from '@assets/image/profile/formal.jpeg'
+import { NewPerson } from '@core/util'
 
 /**
  * Profile data representing a person's identity and greeting message.
@@ -24,10 +24,10 @@ export const Profile: ProfileData = {
  */
 export const Web: WebProfileData = {
   image: Avatar,
-  label: 'Fullstack Developer con enfoque en Backend',
+  label: 'Creo soluciones web completas',
   ogDescription: 'Soy tremendo programador.',
-  about: `Mi nombre es Alexander David y me considero un entusiasta del código y de GNU/Linux. Desde que descubrí el fascinante mundo de Linux a los 13 años, he estado profundamente involucrado en el mundo de la informática.`,
-  summary: `Desarrollador web fullstack que disfruta enfrentando desafíos, diseñando soluciones eficientes y escalables.`
+  summary: `Desarrollo aplicaciones web completas y robustas que resuelven necesidades reales, con código limpio, estructurado y enfocado en la eficiencia, la escalabilidad y el mantenimiento.`,
+  about: `Mi nombre es Alexander David y me considero un entusiasta del código y de GNU/Linux. Desde que descubrí el fascinante mundo de Linux a los 13 años, he estado profundamente involucrado en el mundo de la informática.`
 }
 
 /**
@@ -41,5 +41,5 @@ export const Document: DocumentProfileData = {
     'APIs y Aplicaciones Web',
     'Arquitectura de Software'
   ],
-  description: `Profesional con más de ${calculateYears()} años de trayectoria como Ingeniero en Sistemas y Computación, con un enfoque en la creación de aplicaciones web personalizadas y APIs utilizando Node.js y Express.js, logrando resultados efectivos y eficientes en diversos proyectos.`
+  description: `Desarrollador web fullstack con experiencia en el desarrollo de aplicaciones personalizadas y APIs eficientes. He trabajado en proyectos para sectores como salud y contabilidad, integrando servicios del SRI para automatizar facturación electrónica. Utilizo tecnologías como Node.js, Go, React y PostgreSQL, con enfoque en arquitectura limpia, buenas prácticas, escalabilidad y mantenimiento.`
 }

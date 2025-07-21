@@ -24,7 +24,7 @@ export const GET: APIRoute = async () => {
       Works,
       Projects,
       Languages,
-      Interests,
+      Interests
     }),
     {
       status: 200,

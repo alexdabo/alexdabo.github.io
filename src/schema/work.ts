@@ -22,6 +22,8 @@ export const Works: Array<Work> = [
   {
     export: true,
     project: 'Galeno',
+    endDate: '05/2024',
+    startDate: '02/2021',
     name: 'Pegaso Solutions',
     position: 'Desarrollador',
     images: [
@@ -31,16 +33,15 @@ export const Works: Array<Work> = [
       { image: GalenoSale, alt: 'Galeno venta en farmacia' }
     ],
     url: 'https://pegasosolutionsec.com/galeno',
-    summary:
-      'Desarrollar sistemas para la gestión integral en hospitales, abarcando áreas como farmacia, consultorios médicos/odontológicos, imagenología y entrega de informes médicos.',
 
-    startDate: '02/2021',
-    endDate: '05/2024',
-    highlights: [Logo.java, Logo.nest, Logo.graphql, Logo.sri, Logo.react]
+    highlights: [Logo.java, Logo.nest, Logo.graphql, Logo.sri, Logo.react],
+    summary: `Desarrollar sistemas para la gestión integral en hospitales, abarcando áreas como farmacia, consultorios médicos/odontológicos, imagenología y entrega de informes médicos.`
   },
   {
-    export: false,
+    export: true,
     project: 'Cifra',
+    endDate: '05/2024',
+    startDate: '02/2021',
     name: 'Pegaso Solutions',
     position: 'Desarrollador',
     images: [
@@ -50,16 +51,14 @@ export const Works: Array<Work> = [
       { image: CifraKardex, alt: 'Cifra kardex' }
     ],
     url: 'https://pegasosolutionsec.com/cifra',
-    summary:
-      'Desarrollar un sistema contable integral con facturación electrónica, informes detallados, balances precisos y gestión eficiente de inventarios.',
-
-    startDate: '02/2021',
-    endDate: '05/2024',
-    highlights: [Logo.java, Logo.nest, Logo.graphql, Logo.sri, Logo.react]
+    highlights: [Logo.java, Logo.nest, Logo.graphql, Logo.sri, Logo.react],
+    summary: `Desarrollar un sistema contable integral con facturación electrónica, informes detallados, balances precisos y gestión eficiente de inventarios.`
   },
   {
     export: false,
     project: 'Labs – QR Code Generator',
+    endDate: '05/2022',
+    startDate: '02/2021',
     name: 'Pegaso Solutions',
     position: 'Desarrollador',
     images: [
@@ -70,11 +69,7 @@ export const Works: Array<Work> = [
       { image: QRCodeResult, alt: 'QRCode resulttados' }
     ],
     url: 'https://pegasosolutionsec.com/labs-qr-code-generator/',
-    summary:
-      'Desarrollar una aplicación que genere códigos QR para resultados de Laboratorio Clínico y otros exámenes médicos, facilitando su publicación.',
-
-    startDate: '02/2021',
-    endDate: '05/2022',
-    highlights: [Logo.express, Logo.rest, Logo.vue]
+    highlights: [Logo.express, Logo.rest, Logo.vue],
+    summary: `Desarrollar una aplicación que genere códigos QR para resultados de Laboratorio Clínico y otros exámenes médicos, facilitando su publicación.`
   }
 ]
