@@ -20,7 +20,7 @@ import Header from '@layout/composite/Header.astro'
 </Layout>
 
 <script>
-  import { Profile } from '@schema'
+  import { Network } from '@schema'
 
   document.addEventListener('keydown', function (event) {
     // Check if Ctrl (or Cmd on Mac) + p is pressed
@@ -29,7 +29,7 @@ import Header from '@layout/composite/Header.astro'
       event.preventDefault()
 
       // Redirect to /pdf
-      window.location.href = Profile.network.cv.url
+      window.location.href = Network.cv.url
     }
   })
 </script>
