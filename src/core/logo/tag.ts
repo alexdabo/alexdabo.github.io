@@ -5,7 +5,7 @@ import type { LogoName } from './content'
  */
 export type LogoTag = {
   /** Indicates whether the logo should be included in PDF exports */
-  pdf: boolean
+  onlyExport: boolean
 
   /** Human-readable name of the technology or tool (e.g., "Node", "Vue", "GraphQL") */
   name: string
@@ -32,38 +32,44 @@ type TagElement = {
 export const Logo: TagElement = {
   // Api
   express: {
-    pdf: true,
+    onlyExport: false,
     logo: 'express',
     name: 'Express',
     website: 'https://expressjs.com'
   },
   loopback: {
-    pdf: true,
+    onlyExport: false,
     logo: 'loopback',
     name: 'LoopBack',
     website: 'https://loopback.io'
   },
   graphql: {
-    pdf: true,
+    onlyExport: false,
     logo: 'graphql',
     name: 'GraphQL',
     website: 'https://graphql.org'
   },
+  gqlgen: {
+    onlyExport: false,
+    logo: 'gqlgen',
+    name: 'gqlgen',
+    website: 'https://gqlgen.com'
+  },
   nest: {
-    pdf: false,
+    onlyExport: false,
     logo: 'nest',
     name: 'NestJS',
     website: 'https://nestjs.com'
   },
   sri: {
-    pdf: true,
+    onlyExport: false,
     logo: 'sri',
     name: 'WS',
     website:
       'https://celcer.sri.gob.ec/comprobantes-electronicos-ws/RecepcionComprobantesOffline?wsdl'
   },
   rest: {
-    pdf: true,
+    onlyExport: true,
     logo: 'rest',
     name: 'REST',
     website: 'https://expressjs.com'
@@ -71,61 +77,61 @@ export const Logo: TagElement = {
 
   // DB
   mongodb: {
-    pdf: true,
+    onlyExport: false,
     logo: 'mongodb',
     name: 'MongoDB',
     website: 'https://mongodb.com'
   },
   mysql: {
-    pdf: false,
+    onlyExport: false,
     logo: 'mysql',
     name: 'MySQL',
     website: 'https://mysql.com'
   },
   postgres: {
-    pdf: true,
+    onlyExport: false,
     logo: 'postgres',
     name: 'PostgreSQL',
     website: 'https://postgresql.org'
   },
 
   // Langs
-  go: { pdf: true, logo: 'go', name: 'Go', website: 'https://golang.org' },
-  java: { pdf: true, logo: 'java', name: 'Java', website: 'https://java.com' },
+  go: { onlyExport: false, logo: 'go', name: 'Go', website: 'https://golang.org' },
+  java: { onlyExport: false, logo: 'java', name: 'Java', website: 'https://java.com' },
   node: {
-    pdf: true,
+    onlyExport: false,
     logo: 'node',
-    name: 'Node',
+    name: 'JavaScript (Node.js)',
     website: 'https://nodejs.org'
   },
   typescript: {
-    pdf: false,
+    onlyExport: false,
     logo: 'typescript',
     name: 'TypeScript',
     website: 'https://typescriptlang.org'
   },
 
   // Tools
-  git: { pdf: true, logo: 'git', name: 'Git', website: 'https://git-scm.com' },
+  git: { onlyExport: false, logo: 'git', name: 'Git', website: 'https://git-scm.com' },
   linux: {
-    pdf: true,
+    onlyExport: false,
     logo: 'linux',
-    name: 'Linux',
+    name: 'Linux (uso diario)',
     website: 'https://www.linux.org'
   },
 
   // Web
   astro: {
-    pdf: true,
+    onlyExport: false,
     logo: 'astro',
     name: 'Astro',
     website: 'https://astro.build'
   },
   react: {
-    pdf: true,
+    onlyExport: false,
     logo: 'react',
     name: 'React',
     website: 'https://reactjs.org'
   },
-  vue: { pdf: true, logo: 'vue', name: 'Vue', website: 'https://vuejs.org' }
+  vue: { onlyExport: false, logo: 'vue', name: 'Vue', website: 'https://vuejs.org' }
 }

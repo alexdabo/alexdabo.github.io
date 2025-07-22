@@ -1,4 +1,9 @@
-import type { ContentTable, ContentText, TDocumentDefinitions } from 'pdfmake/interfaces'
+import type {
+  ContentTable,
+  ContentText,
+  ContentUnorderedList,
+  TDocumentDefinitions
+} from 'pdfmake/interfaces'
 import { Document, Languages, Network, Profile } from '@schema'
 import { generateVCard } from '@core/util'
 import { Color, FontSize } from './enum'
@@ -7,7 +12,7 @@ import { IconLabel } from './svg'
 
 type Options = Omit<TDocumentDefinitions, 'content'>
 
-type LayoutContent = Array<ContentText | ContentTable>
+type LayoutContent = Array<ContentText | ContentTable | ContentUnorderedList>
 
 export function Layout(content: LayoutContent, options: Options): TDocumentDefinitions {
   return {

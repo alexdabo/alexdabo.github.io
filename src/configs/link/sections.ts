@@ -20,7 +20,8 @@ export const PROJECT: SectionLink = {
 
 export const SKILL: SectionLink = {
   id: 'skill',
-  name: 'Habilidad'
+  name: 'Habilidades',
+  label: 'Habilidades técnicas'
 }
 
 export const ABOUT: SectionLink = {

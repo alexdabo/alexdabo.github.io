@@ -6,6 +6,8 @@ import { type LogoTag } from '@core/logo'
  * visual references, and optional links.
  */
 export interface Project {
+  /** Indicates whether the project should be included in PDF exports */
+  export: boolean
   /** Name or title of the project (e.g., "Sisho", "Bamboo") */
   name: string
 

@@ -1,4 +1,3 @@
-// Image imports for Galeno, Cifra, and Labs QR Code Generator projects
 import GalenoLogin from '@assets/image/galeno/login.png'
 import CifraLogin from '@assets/image/cifra/login.png'
 import QRCodeLogin from '@assets/image/qrcode/login.png'
@@ -69,7 +68,7 @@ export const Works: Array<Work> = [
       },
       {
         name: 'Labs – QR Code Generator',
-        url: 'https://pegasosolutionsec.com/labs-qr-code-generator/',
+        url: 'https://pegasosolutionsec.com/labs-qr-code-generator',
         highlights: [Logo.express, Logo.rest, Logo.vue],
         images: [
           { image: QRCodeLogin, alt: 'QRCode login' },
@@ -78,7 +77,7 @@ export const Works: Array<Work> = [
           { image: QRCodeHistory, alt: 'QRCode historial de exámenes' },
           { image: QRCodeResult, alt: 'QRCode resulttados' }
         ],
-        summary: `Desarrollar una aplicación que genere códigos QR para resultados de Laboratorio Clínico y otros exámenes médicos, facilitando su publicación.`
+        summary: `Desarrollar una aplicación web para generar códigos QR vinculados a resultados médicos (PDF, imágenes o videos), permitiendo su visualización multiplataforma, descarga y envío automatizado por WhatsApp o email.`
       }
     ]
   }

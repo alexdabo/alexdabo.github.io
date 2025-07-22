@@ -1,5 +1,5 @@
 ---
-import { Web, Profile } from '@schema'
+import { Web, Profile, Network } from '@schema'
 interface Props {
   title?: string
   description?: string
@@ -25,8 +25,8 @@ const description = props.description ?? Web.ogDescription
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="profile" />
 <meta property="og:title" content={title} />
-<meta property="og:url" content={Profile.url} />
-<meta property="og:image" content={`${Profile.url}${Web.image.src}`} />
+<meta property="og:url" content={Network.website.url} />
+<meta property="og:image" content={`${Network.website.url}${Web.image.src}`} />
 <meta property="og:description" content={description} />
 <meta property="profile:first_name" content={Profile.givenName} />
 <meta property="profile:last_name" content={Profile.lastName} />

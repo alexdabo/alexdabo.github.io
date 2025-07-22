@@ -21,11 +21,13 @@ export function Icon(props: IconProps): ContentSvg {
         stroke-linejoin="round">${Icons[icon]}</svg>`
   }
 }
-
 type ChipProps = Omit<ContentSvg, 'svg' | 'width' | 'height'> & {
   label: string
 }
 
+/**
+ * @deprecated
+ */
 export function Chip(props: ChipProps): ContentSvg {
   const { label, color = Color.Grey, ...svgProps } = props
   const width = 15 + 6 * label.length

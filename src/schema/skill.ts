@@ -4,21 +4,25 @@ import { Logo } from '@core/logo'
  * A collection of technical skills grouped by category, each associated with relevant technology logos.
  */
 export const Skills: Array<Skill> = [
-  { name: 'Herramientas', keywords: [Logo.linux, Logo.git] },
+  { name: 'Entornos de desarrollo', keywords: [Logo.linux, Logo.git] },
   {
-    name: 'Leguajes',
-    keywords: [Logo.go, Logo.java, Logo.node, Logo.typescript]
+    name: 'Lenguajes y runtimes',
+    keywords: [Logo.node, Logo.go, Logo.java, Logo.typescript]
   },
   {
-    name: 'Servicio web',
-    keywords: [Logo.express, Logo.nest, Logo.graphql]
+    name: 'Frameworks Backend',
+    keywords: [Logo.nest, Logo.loopback, Logo.express, Logo.gqlgen]
   },
   {
-    name: 'Desarrollo web',
+    name: 'Frameworks Frontend',
     keywords: [Logo.astro, Logo.react, Logo.vue]
   },
   {
     name: 'Bases de datos',
-    keywords: [Logo.mongodb, Logo.mysql, Logo.postgres]
+    keywords: [Logo.postgres, Logo.mysql, Logo.mongodb]
+  },
+  {
+    name: 'Comunicación',
+    keywords: [Logo.graphql, Logo.rest]
   }
 ]

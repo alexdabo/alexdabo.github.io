@@ -1,12 +1,15 @@
-import { Educations, Interests, Projects, Document, Works } from '@schema'
-import type { TDocumentDefinitions, Table } from 'pdfmake/interfaces'
+import { Educations, Projects, Document, Works, Skills } from '@schema'
+import { ABOUT, EXPERIENCE, PROJECT, SKILL } from '@config/link'
 import { PortfolioMetadata } from './portfolio.metadata'
-import { ABOUT, EXPERIENCE, PROJECT } from '@config/link'
 import { Color, FontSize } from './core/enum'
-import { Chip, IconLabel } from './core/svg'
 import { NewSection } from './core/section'
 import { HLineLayout } from './core/table'
 import { Layout } from './core/layout'
+import type {
+  TDocumentDefinitions,
+  UnorderedListElement,
+  Table
+} from 'pdfmake/interfaces'
 
 //#endregion
 
@@ -26,19 +29,11 @@ const EXPERIENCE_TABLE: Table = NewSection(
 )
 
 const PROJECT_TABLE: Table = NewSection(
-  Projects.map(item => ({
+  Projects.filter(i => i.export).map(item => ({
     title: item.name,
     endDate: item.endDate,
     startDate: item.startDate,
-    rows: [
-      [{ text: item.description, alignment: 'justify' }],
-      [
-        {
-          columnGap: 5,
-          columns: item.highlights.map(element => Chip({ label: element.name }))
-        }
-      ]
-    ]
+    rows: [[{ text: item.description, alignment: 'justify' }]]
   }))
 )
 
@@ -63,21 +58,12 @@ const EDUCATION_TABLE: Table = NewSection(
   }))
 )
 
-const HOBBIES_TABLE: Table = {
-  body: [
-    ...Interests.map(item => [
-      {
-        layout: 'noBorders',
-        table: {
-          body: [
-            [IconLabel(item.icon, { text: item.name, style: 'mainTitle' })],
-            [{ text: item.reason, alignment: 'justify' }]
-          ]
-        }
-      }
-    ])
+const SKILL_LIST: UnorderedListElement = Skills.map(skil => ({
+  text: [
+    { text: `${skil.name}:  `, bold: true },
+    { text: skil.keywords.map(item => item.name).join(', ') }
   ]
-}
+}))
 
 //#endregion
 
@@ -91,17 +77,17 @@ export const PortfolioDefinition: TDocumentDefinitions = Layout(
     { text: (ABOUT.label ?? ABOUT.name).toUpperCase(), style: 'section' },
     { text: Document.description, alignment: 'justify' },
 
-    { text: EXPERIENCE.name?.toUpperCase(), style: 'section' },
+    { text: EXPERIENCE.name.toUpperCase(), style: 'section' },
     { layout: HLineLayout(), table: EXPERIENCE_TABLE },
 
-    { text: PROJECT.name, style: 'section' },
+    { text: PROJECT.name.toUpperCase(), style: 'section' },
     { layout: HLineLayout(), table: PROJECT_TABLE },
 
     { text: 'FORMACIÓN', style: 'section' },
     { layout: HLineLayout(), table: EDUCATION_TABLE },
 
-    { text: 'HOBBIES', style: 'section' },
-    { layout: HLineLayout(), table: HOBBIES_TABLE }
+    { text: (SKILL.label ?? SKILL.name).toUpperCase(), style: 'section' },
+    { ul: SKILL_LIST }
   ],
   {
     pageMargins: [30, 30],

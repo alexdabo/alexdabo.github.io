@@ -1,4 +1,4 @@
-import { LoopBack, Express, GraphQL, Nest, Rest, Sri } from './content/api'
+import { LoopBack, Express, GraphQL, Nest, Rest, Sri, Gqlgen } from './content/api'
 import { Go, Java, Node, TypeScript } from './content/lang'
 import { Mongodb, MySQL, Postgres } from './content/db'
 import { Astro, React, Vue } from './content/web'
@@ -14,6 +14,7 @@ export const Logos: LogoElement = {
   express: Express,
   loopback: LoopBack,
   graphql: GraphQL,
+  gqlgen: Gqlgen,
   nest: Nest,
   sri: Sri,
   rest: Rest,
