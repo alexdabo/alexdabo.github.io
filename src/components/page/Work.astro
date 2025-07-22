@@ -10,26 +10,26 @@ import { Works } from '@schema'
 <Section id={EXPERIENCE.id} label={EXPERIENCE.name}>
   <div class="flex flex-col gap-y-16">
     {
-      Works.map(item => (
+      Works.flatMap(work => work.projects).map(project => (
         <article class="flex flex-col space-x-0 space-y-8 md:flex-row md:space-x-8 md:space-y-0">
           <div class="w-full md:w-1/2">
             <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-300 lg:hover:bg-gray-200">
-              <Carousel dots images={item.images} />
+              <Carousel dots images={project.images} />
             </div>
           </div>
 
           <div class="w-full md:w-1/2 md:max-w-lg">
             <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-              {item.name}
+              {project.name}
             </h3>
             <div class="flex flex-wrap mt-2">
               <ul class="flex flex-wrap mb-2 gap-2">
-                {item.highlights.map(tag => (
+                {project.highlights.map(tag => (
                   <li>
                     <ButtonLink
                       target="_blank"
                       link={tag.website}
-                      id={`${item.project}-${tag.logo}`}
+                      id={`${project.name}-${tag.logo}`}
                     >
                       <Logo size="18" logo={tag.logo} />
                       {tag.name}
@@ -38,14 +38,14 @@ import { Works } from '@schema'
                 ))}
               </ul>
 
-              <div class="mt-2 text-gray-700 dark:text-gray-400">{item.summary}</div>
+              <div class="mt-2 text-gray-700 dark:text-gray-400">{project.summary}</div>
               <footer class="flex items-end justify-start mt-4 gap-x-4">
-                {item.url && (
+                {project.url && (
                   <ButtonLink
                     icon="web"
                     target="_blank"
-                    link={item.url}
-                    id={`${item.project}-web`}
+                    link={project.url}
+                    id={`${project.name}-web`}
                   >
                     Sitio web
                   </ButtonLink>

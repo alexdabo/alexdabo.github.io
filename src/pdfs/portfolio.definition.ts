@@ -15,21 +15,13 @@ import { Layout } from './core/layout'
  ************************************************/
 //#region
 const EXPERIENCE_TABLE: Table = NewSection(
-  Works.filter(i => i.export).map(item => ({
+  Works.map(item => ({
     url: item.url,
-    alt: item.name,
+    alt: item.company,
     title: item.position,
     endDate: item.endDate,
     startDate: item.startDate,
-    rows: [
-      [{ text: item.summary, alignment: 'justify' }],
-      [
-        {
-          columnGap: 5,
-          columns: item.highlights.map(element => Chip({ label: element.name }))
-        }
-      ]
-    ]
+    rows: [[{ alignment: 'justify', ul: item.activities }]]
   }))
 )
 
