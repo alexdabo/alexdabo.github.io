@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro'
+import { site } from '@core/util'
 import {
   Educations,
   Interests,
@@ -16,13 +17,22 @@ export const GET: APIRoute = async () => {
   return new Response(
     JSON.stringify({
       Profile,
-      Web,
+      Web: { ...Web, image: site(Web.image.src) },
       Document,
       Network,
       Educations,
       Skills,
-      Works,
-      Projects,
+      Works: Works.map(work => ({
+        ...work,
+        projects: work.projects.map(project => ({
+          ...project,
+          images: project.images.map(asset => site(asset.image.src))
+        }))
+      })),
+      Projects: Projects.map(project => ({
+        ...project,
+        images: project.images.map(asset => site(asset.image.src))
+      })),
       Languages,
       Interests
     }),

@@ -1,5 +1,5 @@
-import { filename } from '@core/util'
 import type { Networks } from './model/network'
+import { filename, site } from '@core/util'
 import { Profile } from './profile'
 
 /**
@@ -13,7 +13,7 @@ export const Network: Networks = {
     icon: 'cv',
     name: 'Descargar',
     label: 'Descargar CV',
-    url: '/pdf/' + filename(Profile.name, '.pdf')
+    url: site('/pdf/' + filename(Profile.name, '.pdf'))
   },
   email: {
     icon: 'email',
@@ -37,6 +37,6 @@ export const Network: Networks = {
     icon: 'web',
     name: 'Sitio web',
     label: 'alexdabo.github.io',
-    url: 'https://alexdabo.github.io'
+    url: import.meta.env.SITE
   }
 }

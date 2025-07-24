@@ -31,3 +31,29 @@ export function chooseByMode<T>(env: T, prod: T) {
 
   return env
 }
+
+/**
+ * Constructs a full site URL by concatenating the domain with the provided path.
+ *
+ * In development mode (`import.meta.env.DEV` is `true`), the domain defaults to
+ * `'http://localhost:4321'`. Otherwise, it uses the value of `import.meta.env.SITE`.
+ *
+ * @param path - The path to append to the domain (should start with a slash `/`).
+ * @returns The full URL string combining the domain and the given path.
+ *
+ * @example
+ * // In development mode
+ * site('/about') // returns 'http://localhost:4321/about'
+ *
+ * // In production mode (assuming SITE = 'https://example.com')
+ * site('/about') // returns 'https://example.com/about'
+ */
+export function site(path: string): string {
+  let domain = import.meta.env.SITE
+
+  if (import.meta.env.DEV) {
+    domain = 'http://localhost:4321'
+  }
+
+  return `${domain}${path}`
+}
